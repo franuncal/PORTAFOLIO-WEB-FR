@@ -1,0 +1,87 @@
+.contact-container {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-left: 2rem;
+  position: relative;
+  padding-top: 10rem; /* Espacio desde arriba */
+  padding-bottom: 3rem;
+}
+
+.contact-info {
+  font-size: 40px;
+}
+
+.contact-item {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 8rem;
+  margin: 0.5rem 0; /* Espacio reducido entre los ítems */
+  cursor: pointer;
+  position: relative;
+  padding-right: 15rem;
+  transition: transform 0.3s ease; /* Animación para el ítem */
+}
+
+.contact-item::before,
+.contact-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0); /* Líneas inicialmente escondidas */
+  transition: transform 0.3s ease;
+}
+
+.contact-item::before {
+  top: -10px; /* Línea superior */
+}
+
+.contact-item::after {
+  bottom: -10px; /* Línea inferior */
+}
+
+.contact-item:hover::before,
+.contact-item:hover::after {
+  transform: scaleX(1); /* Mostrar las líneas en hover */
+}
+
+.contact-detail {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 3rem;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: -20rem; /* Mantener el detalle a la derecha */
+  top: 50px; /* Ajustar la posición hacia abajo o hacia arriba */
+  transform: translateY(20px); /* Detalle fuera de vista al inicio */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Animación de aparición */
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+}
+
+.contact-item:hover {
+  transform: translateY(
+    -10px
+  ); /* Mover el ítem un poco hacia arriba al pasar el mouse */
+}
+
+.contact-item:hover .contact-detail {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(
+    0
+  ); /* Animación del detalle desde abajo hacia su posición */
+}
+
+.contact-detail:hover {
+  text-decoration: underline;
+}

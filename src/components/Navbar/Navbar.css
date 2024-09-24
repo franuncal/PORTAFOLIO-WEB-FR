@@ -1,0 +1,55 @@
+/* Navbar */
+header {
+  position: fixed;
+  font-family: "Gruppo", sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  color: #f4f4f4;
+  max-width: 7rem;
+  font-size: 2rem;
+  margin-right: 5rem;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+
+.nav-list li a {
+  padding: 0.3rem 0.6rem;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #f4f4f4;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-family: "Gruppo", sans-serif;
+}
+
+.abrir-menu,
+.cerrar-menu {
+  display: none;
+}
+
+.social-icons-nav a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: #f4f4f4;
+  transition: color 0.3s;
+}
