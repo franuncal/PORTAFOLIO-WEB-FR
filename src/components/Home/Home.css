@@ -103,3 +103,23 @@
   background-color: black;
   color: white;
 }
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr; /* Un solo video por fila */
+    gap: 3px;
+  }
+
+  .video {
+    height: 300px; /* Ajustar la altura del video */
+  }
+
+  .modal-content {
+    width: 95%; /* Ajustar el ancho del modal */
+  }
+
+  .video-full {
+    height: 400px; /* Ajustar la altura del video en el modal */
+  }
+}

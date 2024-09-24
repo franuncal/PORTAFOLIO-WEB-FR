@@ -117,6 +117,11 @@ const Page = () => {
       title: "Emilia Mernes - Concierto",
       description: "Cobertura audiovisual del concierto de Emilia",
     },
+    {
+      url: "https://www.youtube.com/embed/J6LuXJm--u8",
+      title: "Miranda - Concierto",
+      description: "Cobertura audiovisual del concierto de Miranda",
+    },
   ];
 
   const openModal = (videoUrl) => {

@@ -35,3 +35,25 @@
 .social-link:hover {
   color: #888;
 }
+
+/* Media queries para hacer el footer responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinear a la izquierda */
+  }
+
+  .footer-left {
+    font-size: 1.2rem; /* Reducir tamaño de fuente en pantallas pequeñas */
+    margin-bottom: 1rem; /* Espacio entre los elementos */
+  }
+
+  .footer-right {
+    justify-content: flex-start; /* Alinear elementos a la izquierda */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan si es necesario */
+  }
+
+  .social-link {
+    font-size: 1rem; /* Reducir tamaño de fuente de los enlaces sociales */
+  }
+}

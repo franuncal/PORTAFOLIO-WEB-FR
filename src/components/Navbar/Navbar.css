@@ -14,9 +14,6 @@ header {
 
 .logo {
   font-family: "Teko", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
   color: #f4f4f4;
   max-width: 7rem;
   font-size: 2rem;
@@ -52,4 +49,38 @@ header {
   font-size: 1.2em;
   color: #f4f4f4;
   transition: color 0.3s;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    display: none; /* Ocultar por defecto */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo para el menú */
+    position: absolute; /* Posicionar el menú */
+    top: 100%; /* Alinear al borde inferior del navbar */
+    left: 0;
+    right: 0;
+    padding: 1rem; /* Espaciado interno */
+    z-index: 1000; /* Asegurar que esté por encima */
+    transition: transform 0.3s ease-in-out; /* Efecto de transición */
+    transform: translateY(-10px); /* Desplazamiento inicial */
+  }
+
+  .nav.open .nav-list {
+    display: flex; /* Mostrar el menú cuando está abierto */
+    transform: translateY(0); /* Restaurar la posición */
+  }
+
+  .abrir-menu {
+    display: block; /* Mostrar botón de abrir menú */
+  }
+
+  .cerrar-menu {
+    display: none; /* Ocultar por defecto */
+  }
+
+  .cerrar-menu.visible {
+    display: block; /* Mostrar botón de cerrar solo si el menú está abierto */
+  }
 }
