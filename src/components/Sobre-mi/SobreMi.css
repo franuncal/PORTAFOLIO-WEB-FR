@@ -43,11 +43,12 @@
   font-weight: 300;
   color: #777;
   text-align: left; /* Alinear el texto a la izquierda */
+  font-style: oblique;
 }
 
 .about-me-image img {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 350px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 22px;
 }
