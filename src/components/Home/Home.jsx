@@ -33,6 +33,8 @@ const Home = () => {
     "https://www.youtube.com/embed/Hb8FbT47DtY",
     // Miranda
     "https://www.youtube.com/embed/J6LuXJm--u8",
+    // Bresh
+    "https://www.youtube.com/embed/fM-3BnaqYOU",
   ];
 
   const openModal = (videoUrl) => {

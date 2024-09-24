@@ -22,10 +22,10 @@ header {
 }
 
 .nav-list {
+  cursor: pointer;
   list-style-type: none;
   display: flex;
   gap: 1.2rem;
-  cursor: pointer;
 }
 
 .nav-list li a {
