@@ -1,4 +1,5 @@
-import "./Contacto.css"; // Asegúrate de crear este archivo para los estilos
+// Componente Contacto
+import "./Contacto.css";
 
 export const Contacto = () => {
   return (

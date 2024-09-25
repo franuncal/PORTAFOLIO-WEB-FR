@@ -52,3 +52,48 @@
   object-fit: cover;
   border-radius: 22px;
 }
+
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .about-me-title {
+    font-size: 8rem; /* Ajustar el tamaño del título */
+    top: 0.5rem;
+    left: 1rem;
+  }
+
+  .about-me-grid {
+    grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    gap: 4rem; /* Reducir el espacio */
+    margin-top: 8rem; /* Menor espacio arriba */
+  }
+
+  .about-me-text {
+    max-width: 100%; /* Ajustar el ancho del texto */
+  }
+
+  .about-me p {
+    font-size: 1.1rem; /* Texto más pequeño */
+  }
+
+  .about-me-image img {
+    width: 100%; /* Imagen más grande que ocupe toda la columna */
+    height: auto; /* Ajustar la altura automáticamente */
+  }
+}
+
+/* Media queries para pantallas extra pequeñas (móviles muy pequeños) */
+@media (max-width: 480px) {
+  .about-me-title {
+    font-size: 6rem; /* Título aún más pequeño */
+    top: 0.5rem;
+    left: 1rem;
+  }
+
+  .about-me-grid {
+    gap: 2rem; /* Reducir el espacio entre elementos */
+  }
+
+  .about-me p {
+    font-size: 1rem; /* Reducir aún más el texto */
+  }
+}

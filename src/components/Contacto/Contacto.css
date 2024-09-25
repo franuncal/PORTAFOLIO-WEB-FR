@@ -6,14 +6,13 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  padding-left: 2rem;
-  position: relative;
+  padding: 2rem; /* Espaciado uniforme */
   padding-top: 10rem; /* Espacio desde arriba */
   padding-bottom: 3rem;
 }
 
 .contact-info {
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 .contact-item {
@@ -84,4 +83,94 @@
 
 .contact-detail:hover {
   text-decoration: underline;
+}
+
+/* Media queries para tablet y dispositivos móviles */
+@media (max-width: 920px) {
+  .contact-info {
+    font-size: 2rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .contact-item {
+    font-size: 6rem; /* Tamaño de ítem más grande */
+    margin-top: 3rem; /* Espacio entre ítems */
+    position: relative; /* Mantener el flujo normal */
+    transition: none; /* Quitar transición en móviles */
+    padding-right: 0; /* Eliminar el espacio a la derecha */
+  }
+
+  .contact-detail {
+    font-size: 2rem; /* Tamaño del detalle más pequeño */
+    visibility: visible; /* Mostrar siempre en móviles */
+    opacity: 1; /* Asegurar que sea visible */
+    margin-top: 0.5rem; /* Espacio adicional */
+    display: block; /* Asegurarse de que ocupe el espacio completo */
+    position: static; /* Cambiar a posición estática para que aparezca debajo */
+    right: auto; /* Asegurarse de que no tenga desplazamiento */
+    transform: none; /* Sin transformaciones */
+  }
+
+  /* Quitar efectos de hover en pantallas pequeñas */
+  .contact-item:hover::before,
+  .contact-item:hover::after {
+    transform: none; /* No aplicar transformación */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    font-size: 2rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .contact-item {
+    font-size: 6rem; /* Tamaño de ítem más grande */
+    margin-top: 3rem; /* Espacio entre ítems */
+    position: relative; /* Mantener el flujo normal */
+    transition: none; /* Quitar transición en móviles */
+    padding-right: 0; /* Eliminar el espacio a la derecha */
+  }
+
+  .contact-detail {
+    font-size: 2rem; /* Tamaño del detalle más pequeño */
+    visibility: visible; /* Mostrar siempre en móviles */
+    opacity: 1; /* Asegurar que sea visible */
+    margin-top: 0.5rem; /* Espacio adicional */
+    display: block; /* Asegurarse de que ocupe el espacio completo */
+    position: static; /* Cambiar a posición estática para que aparezca debajo */
+    right: auto; /* Asegurarse de que no tenga desplazamiento */
+    transform: none; /* Sin transformaciones */
+  }
+
+  /* Quitar efectos de hover en pantallas pequeñas */
+  .contact-item:hover::before,
+  .contact-item:hover::after {
+    transform: none; /* No aplicar transformación */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 1rem; /* Espaciado más pequeño en móviles */
+  }
+
+  .contact-info {
+    font-size: 1.2rem; /* Tamaño de fuente aún más pequeño */
+  }
+
+  .contact-item {
+    font-size: 3.5rem; /* Tamaño de fuente más pequeño */
+    margin-top: 1.4rem; /* Espacio adicional entre ítems */
+    transition: none; /* Quitar transición en móviles */
+  }
+
+  .contact-detail {
+    font-size: 1.2rem; /* Reducir tamaño del detalle */
+    margin-top: 0.5rem; /* Espacio entre el item y el detail */
+    visibility: visible; /* Mostrar siempre en móviles */
+    opacity: 1; /* Asegurar que sea visible */
+    display: block; /* Asegurarse de que ocupe el espacio completo */
+    position: static; /* Cambiar a posición estática para que aparezca debajo */
+    right: auto; /* Asegurarse de que no tenga desplazamiento */
+    transform: none; /* Sin transformaciones */
+  }
 }
