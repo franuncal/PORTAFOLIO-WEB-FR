@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
-import { useState } from "react"; // Importa useState
+import { Link } from "react-router-dom"; // Importa useLocation
+import { useState } from "react";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Alterna el estado del menú
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleMenuClick = () => {
+    setMenuOpen(false); // Cierra el menú al hacer clic
   };
 
   return (
@@ -27,13 +31,19 @@ export const Navbar = () => {
       <nav className={`nav ${menuOpen ? "open" : ""}`} id="nav">
         <ul className="nav-list" id="nav-list">
           <li>
-            <Link to="/">Inicio</Link>
+            <Link to="/" onClick={handleMenuClick}>
+              Inicio
+            </Link>
           </li>
           <li>
-            <Link to="/SobreMi">Sobre Mí</Link>
+            <Link to="/SobreMi" onClick={handleMenuClick}>
+              Sobre Mí
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contacto</Link>
+            <Link to="/contact" onClick={handleMenuClick}>
+              Contacto
+            </Link>
           </li>
           <div className="social-icons-nav">
             <a

@@ -140,3 +140,26 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-container-p .title {
+    font-size: 6.3rem; /* Ajusta para pantallas más pequeñas */
+  }
+
+  .call-to-action h2 {
+    font-size: 3rem; /* Ajusta para pantallas más pequeñas */
+  }
+
+  .cta-button {
+    font-size: 2.5rem; /* Ajusta para pantallas más pequeñas */
+  }
+
+  .descripcion h3 {
+    font-size: 1.25rem; /* Ajusta para pantallas más pequeñas */
+  }
+
+  .descripcion p {
+    font-size: 0.9rem; /* Ajusta para pantallas más pequeñas */
+  }
+}
