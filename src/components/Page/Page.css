@@ -144,7 +144,7 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .home-container-p .title {
-    font-size: 6.3rem; /* Ajusta para pantallas más pequeñas */
+    font-size: 6rem; /* Título aún más pequeño */
   }
 
   .call-to-action h2 {
@@ -161,5 +161,15 @@
 
   .descripcion p {
     font-size: 0.9rem; /* Ajusta para pantallas más pequeñas */
+  }
+}
+
+/* Media queries para pantallas extra pequeñas (móviles muy pequeños) */
+@media (max-width: 480px) {
+  .home-container-p .title {
+    font-size: 6rem; /* Título aún más pequeño */
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+    align-items: flex-start;
   }
 }

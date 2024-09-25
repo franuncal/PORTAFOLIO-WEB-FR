@@ -85,7 +85,7 @@
 @media (max-width: 480px) {
   .about-me-title {
     font-size: 6rem; /* Título aún más pequeño */
-    top: 0.5rem;
+    top: 2rem;
     left: 1rem;
   }
 
@@ -94,6 +94,6 @@
   }
 
   .about-me p {
-    font-size: 1rem; /* Reducir aún más el texto */
+    font-size: 1.3rem; /* Reducir aún más el texto */
   }
 }
