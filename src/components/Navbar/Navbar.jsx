@@ -54,7 +54,7 @@ export const Navbar = () => {
               <i className="bi bi-instagram"></i>
             </a>
             <a
-              href="https://wa.me/2324503773"
+              href="https://wa.me/2324503773?text=Hola Fede! Me comunico desde la pagina web, quiero consultarte por un trabajo..."
               target="_blank"
               rel="noopener noreferrer"
             >
