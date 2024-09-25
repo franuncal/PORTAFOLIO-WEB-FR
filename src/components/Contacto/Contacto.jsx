@@ -16,7 +16,10 @@ export const Contacto = () => {
         </div>
         <div className="contact-item">
           <strong>TELEFONO</strong>
-          <a href="tel:+5492324503773" className="contact-detail">
+          <a
+            href="https://wa.me/2324503773?text=Hola Fede! Me comunico desde la pagina web, quiero consultarte por un trabajo..."
+            className="contact-detail"
+          >
             +54 9 2324 50-3773
           </a>
         </div>
