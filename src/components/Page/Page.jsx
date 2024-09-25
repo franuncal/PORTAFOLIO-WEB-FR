@@ -60,7 +60,7 @@ const Page = () => {
     {
       url: "https://www.youtube.com/embed/3wbo-rEKGNw",
       title: "RENAULT X GABRIELA SABATINI X ROLAND GARROS",
-      description: "ADVERTISING DIRECTION",
+      description: "DIRECTION CONTENT",
     },
     {
       url: "https://www.youtube.com/embed/re75ORPz2tk",
@@ -85,7 +85,7 @@ const Page = () => {
     {
       url: "https://www.youtube.com/embed/Ug2KoGHsRf8",
       title: "SIDRA 1888 TORNEO IEB + ARG OPEN",
-      description: "DIRECCION CONTENT",
+      description: "DIRECTION CONTENT",
     },
     {
       url: "https://www.youtube.com/embed/OIGd7FdVU8I",
@@ -144,7 +144,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="home-container-p">
+    <section className="home-container-p">
       <h1 className="title">PROYECTOS</h1>
       <div className="video-grid-p">
         {videos.map((video, index) => (
@@ -198,7 +198,7 @@ const Page = () => {
           ~ Contactame...
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 
