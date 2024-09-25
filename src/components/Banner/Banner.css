@@ -73,6 +73,7 @@
   .banner-content {
     padding-left: 20px; /* Reducir el padding */
     padding-right: 20px;
+    padding-top: 50px;
   }
 
   .logo-v {
@@ -93,12 +94,13 @@
   }
 
   .logo-v {
-    font-size: 3.9rem;
+    font-size: 4rem;
   }
 
   .logo-vp {
-    font-size: 1.7rem; /* Ajustar tamaño del subtítulo */
+    font-size: 1.8rem; /* Ajustar tamaño del subtítulo */
     letter-spacing: 0.3rem; /* Reducir el espaciado de letras */
     margin-top: 0.1rem; /* Eliminar cualquier superposición */
+    margin: -2rem;
   }
 }
