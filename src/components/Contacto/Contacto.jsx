@@ -19,6 +19,7 @@ export const Contacto = () => {
           <a
             href="https://wa.me/2324503773?text=Hola Fede! Me comunico desde la pagina web, quiero consultarte por un trabajo..."
             className="contact-detail"
+            target="_blank"
           >
             +54 9 2324 50-3773
           </a>
