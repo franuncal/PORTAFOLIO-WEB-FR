@@ -35,8 +35,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent; /* Fondo transparente */
-  z-index: 1; /* Asegurarse de que esté sobre el iframe */
+  background: transparent;
+  z-index: 1;
+}
+
+/* Estilos para los 4 videos en una fila */
+.four-videos-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espacio entre los videos */
+  margin-top: 20px;
+  margin-bottom: 30px; /* Separación entre este bloque y el siguiente */
+}
+
+.four-videos-container .video-container {
+  flex: 1; /* Los videos ocuparán el mismo espacio */
+}
+
+.four-videos-container .video {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
 }
 
 /* Modal */
@@ -46,7 +65,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,8 +78,8 @@
   border-radius: 8px;
   position: relative;
   width: 80%;
-  max-width: 900px; /* Limitar el tamaño máximo del modal */
-  max-height: 80%; /* Limitar el tamaño */
+  max-width: 900px;
+  max-height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +102,7 @@
 }
 
 .more-projects-container {
-  margin: 80px 40px; /* Espacio extra entre los videos y el botón */
+  margin: 80px 40px;
 }
 
 .more-projects-button {
@@ -99,7 +118,7 @@
 }
 
 .more-projects-button:hover {
-  transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+  transform: scale(1.1);
   background-color: black;
   color: white;
 }
@@ -121,5 +140,34 @@
 
   .video-full {
     height: 400px; /* Ajustar la altura del video en el modal */
+  }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .video {
+    height: 300px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .video-full {
+    height: 400px;
+  }
+
+  .vertical-video {
+    grid-column: span 1; /* En pantallas pequeñas, los videos verticales ocupan una columna completa */
+    width: 100%;
+  }
+
+  .vertical {
+    height: 400px;
   }
 }
