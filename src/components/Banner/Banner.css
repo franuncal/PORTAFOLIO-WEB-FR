@@ -15,7 +15,8 @@
 
 .banner-content {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  padding: 20px;
   background: rgba(0, 0, 0, 0.6); /* Fondo con opacidad */
   display: flex;
   justify-content: center;
@@ -29,15 +30,16 @@
 }
 
 .logo-v {
+  margin: 0;
   font-weight: 500;
   font-family: "Teko", sans-serif;
   color: #f4f4f4;
   font-size: 8.8rem;
   text-decoration: none;
-  margin: 0;
 }
 
 .logo-vp {
+  margin: 0;
   letter-spacing: 1.1rem; /* Reducir el espaciado entre letras */
   font-size: 2.7rem;
   color: #ffffff;

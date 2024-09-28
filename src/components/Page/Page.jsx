@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Page.css";
 
@@ -129,15 +129,28 @@ const Page = () => {
     },
   ];
 
-  const openModal = (videoUrl) => {
+  const openModal = useCallback((videoUrl) => {
     setSelectedVideo(videoUrl);
     setIsOpen(true);
-  };
+  }, []);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsOpen(false);
     setSelectedVideo("");
-  };
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && isOpen) {
+        closeModal();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, closeModal]);
 
   useEffect(() => {
     window.scrollTo(0, 0); // Desplazar hacia arriba cuando se monta el componente
@@ -168,6 +181,7 @@ const Page = () => {
             <div
               className="overlay-p"
               onClick={() => openModal(video.url)}
+              title={`Ver video: ${video.title}`} // Título para mejorar la accesibilidad
             ></div>
           </div>
         ))}

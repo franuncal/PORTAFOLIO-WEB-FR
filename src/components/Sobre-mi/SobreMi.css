@@ -7,13 +7,12 @@
   max-width: 1200px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  background-color: #000; /* Fondo negro para mayor contraste */
 }
 
 .about-me-title {
   font-family: "Teko", sans-serif;
-  font-optical-sizing: auto;
   font-weight: normal;
-  font-style: normal;
   font-size: 18rem; /* Título grande */
   color: #fff;
   margin: 4rem 0 0 0; /* Espacio en la parte superior para separarlo del navbar */

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -33,6 +33,21 @@ const Home = () => {
     setSelectedVideo("");
   };
 
+  // Usa useCallback para memorizar la función handleKeyDown
+  const handleKeyDown = useCallback((event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  }, []); // No dependencias ya que closeModal no cambia
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleKeyDown]); // Añadido handleKeyDown como dependencia
+
   return (
     <div className="home-container">
       {/* Grid original para los videos anteriores */}
@@ -51,6 +66,7 @@ const Home = () => {
               allowFullScreen
               title={`video-${index}`}
               className={`video ${index >= 6 ? "vertical" : ""}`}
+              aria-label={`Video de ${index + 1}`}
             ></iframe>
             <div className="overlay" onClick={() => openModal(videoUrl)}></div>
           </div>
@@ -70,6 +86,7 @@ const Home = () => {
               allowFullScreen
               title={`video-${index}`}
               className="video"
+              aria-label={`Video de ${index + 1}`}
             ></iframe>
             <div className="overlay" onClick={() => openModal(videoUrl)}></div>
           </div>
@@ -105,4 +122,5 @@ const Home = () => {
   );
 };
 
-export default Home;
+// Exportando el componente envuelto en React.memo
+export default React.memo(Home);

@@ -6,12 +6,14 @@ import { SobreMi } from "./components/Sobre-mi/SobreMi";
 import { Contacto } from "./components/Contacto/Contacto";
 import Page from "./components/Page/Page";
 import { Footer } from "./components/Footer/Footer";
+import ScrollToTop from "./components/scrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"

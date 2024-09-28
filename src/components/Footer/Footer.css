@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
+  max-width: 1200px; /* Definir un ancho máximo */
   margin: 0 auto;
 }
 
@@ -29,6 +29,7 @@
   color: #777;
   text-decoration: none;
   font-size: 1.2rem;
+  transition: color 0.3s; /* Añadir una transición suave al color */
 }
 
 .social-link:hover {

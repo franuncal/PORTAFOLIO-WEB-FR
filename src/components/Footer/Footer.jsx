@@ -11,22 +11,26 @@ export const Footer = () => {
           </Link>
         </div>
         <div className="footer-right">
-          <a
-            href="https://www.instagram.com/federementeria27/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-link"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.youtube.com/@federementeria27"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-link"
-          >
-            YouTube
-          </a>
+          {[
+            {
+              href: "https://www.instagram.com/federementeria27/",
+              label: "Instagram",
+            },
+            {
+              href: "https://www.youtube.com/@federementeria27",
+              label: "YouTube",
+            },
+          ].map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              {social.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
