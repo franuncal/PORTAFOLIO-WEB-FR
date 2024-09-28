@@ -13,9 +13,13 @@ export const Navbar = () => {
     setMenuOpen(false); // Cierra el menú al hacer clic
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Desplazamiento suave al inicio
+  };
+
   return (
     <header>
-      <Link to="/" className="logo">
+      <Link to="/" className="logo" onClick={handleScrollToTop}>
         federementeria.
       </Link>
       <button id="abrir" className="abrir-menu" onClick={toggleMenu}>
@@ -31,7 +35,13 @@ export const Navbar = () => {
       <nav className={`nav ${menuOpen ? "open" : ""}`} id="nav">
         <ul className="nav-list" id="nav-list">
           <li>
-            <Link to="/" onClick={handleMenuClick}>
+            <Link
+              to="/"
+              onClick={() => {
+                handleMenuClick();
+                handleScrollToTop();
+              }}
+            >
               Inicio
             </Link>
           </li>
