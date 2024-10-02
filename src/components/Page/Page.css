@@ -45,12 +45,11 @@
   transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
-/* Estilos para los videos */
-.video-p {
-  border: none;
-  width: 100%;
-  height: auto;
-  border-radius: 12px; /* Redondeado para los videos */
+/* Estilos para las miniaturas de video */
+.video-thumbnail {
+  border-radius: 12px; /* Bordes redondeados para miniaturas */
+  width: 100%; /* Asegúrate de que las miniaturas ocupen el 100% del contenedor */
+  height: auto; /* Mantener la relación de aspecto */
 }
 
 /* Título y descripción del video */
@@ -191,6 +190,10 @@
 
   .descripcion p {
     font-size: 0.9rem; /* Ajusta para pantallas más pequeñas */
+  }
+
+  .video-full {
+    height: 300px; /* Ajusta la altura del video en el modal para pantallas pequeñas */
   }
 }
 

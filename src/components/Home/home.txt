@@ -1,0 +1,16 @@
+  const videos = [
+    "https://www.youtube.com/embed/3wbo-rEKGNw", // Gaby
+    "https://www.youtube.com/embed/re75ORPz2tk", // Nike
+    "https://www.youtube.com/embed/r44fbL9Tg_k", // Messi
+    "https://www.youtube.com/embed/d6WgQ7TvKL4", // Lacoste
+    "https://www.youtube.com/embed/Zt0uUcHv4qo", // Reci. Argentina
+    "https://www.youtube.com/embed/Ug2KoGHsRf8", // Sidra 1888
+    "https://www.youtube.com/embed/OIGd7FdVU8I", // Sidra 1888 2
+    "https://www.youtube.com/embed/AjPANMagV_g", // Adidas
+    "https://www.youtube.com/embed/8jCvH47oepw", // Emilia
+    "https://www.youtube.com/embed/vDWve7oPfo0", // Tengo 1
+    "https://www.youtube.com/embed/ZiK2uwovNZY", // Emilia vert.
+    "https://www.youtube.com/embed/Hb8FbT47DtY", // Lali Mov. vert.
+    "https://www.youtube.com/embed/J6LuXJm--u8", // Miranda vert.
+    "https://www.youtube.com/embed/fM-3BnaqYOU", // Bresh vert.
+  ];

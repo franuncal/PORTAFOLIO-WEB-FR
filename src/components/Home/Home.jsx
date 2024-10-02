@@ -1,7 +1,60 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
+// Componente para el video con Lazy Loading
+const Video = ({ videoUrl, isVertical, onClick }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const currentRef = videoRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          currentRef.src = `${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoUrl
+            .split("/")
+            .pop()}&controls=0&modestbranding=1&showinfo=0&rel=0`;
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [videoUrl]);
+
+  return (
+    <div className={`video-container ${isVertical ? "vertical-video" : ""}`}>
+      <iframe
+        ref={videoRef}
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        title={`video-${videoUrl}`}
+        className={`video ${isVertical ? "vertical" : ""}`}
+        aria-label="Video de la galería"
+      ></iframe>
+      <div className="overlay" onClick={onClick}></div>
+    </div>
+  );
+};
+
+// Validación de las props
+Video.propTypes = {
+  videoUrl: PropTypes.string.isRequired,
+  isVertical: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+// Componente principal Home
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState("");
@@ -33,12 +86,11 @@ const Home = () => {
     setSelectedVideo("");
   };
 
-  // Usa useCallback para memorizar la función handleKeyDown
   const handleKeyDown = useCallback((event) => {
     if (event.key === "Escape") {
       closeModal();
     }
-  }, []); // No dependencias ya que closeModal no cambia
+  }, []);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -46,54 +98,34 @@ const Home = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleKeyDown]); // Añadido handleKeyDown como dependencia
+  }, [handleKeyDown]);
 
   return (
     <div className="home-container">
-      {/* Grid original para los videos anteriores */}
       <div className="video-grid">
         {videos.slice(0, -4).map((videoUrl, index) => (
-          <div
+          <Video
             key={index}
-            className={`video-container ${index >= 6 ? "vertical-video" : ""}`}
-          >
-            <iframe
-              src={`${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoUrl
-                .split("/")
-                .pop()}&controls=0&modestbranding=1&showinfo=0&rel=0`}
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title={`video-${index}`}
-              className={`video ${index >= 6 ? "vertical" : ""}`}
-              aria-label={`Video de ${index + 1}`}
-            ></iframe>
-            <div className="overlay" onClick={() => openModal(videoUrl)}></div>
-          </div>
+            videoUrl={videoUrl}
+            isVertical={index >= 6}
+            onClick={() => openModal(videoUrl)}
+          />
         ))}
       </div>
 
-      {/* Nuevo contenedor para los 4 últimos videos */}
+      {/* Contenedor de los 4 últimos videos */}
       <div className="four-videos-container">
         {videos.slice(-4).map((videoUrl, index) => (
-          <div key={index} className="video-container">
-            <iframe
-              src={`${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoUrl
-                .split("/")
-                .pop()}&controls=0&modestbranding=1&showinfo=0&rel=0`}
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title={`video-${index}`}
-              className="video"
-              aria-label={`Video de ${index + 1}`}
-            ></iframe>
-            <div className="overlay" onClick={() => openModal(videoUrl)}></div>
-          </div>
+          <Video
+            key={index}
+            videoUrl={videoUrl}
+            isVertical={false}
+            onClick={() => openModal(videoUrl)}
+          />
         ))}
       </div>
 
-      {/* Modal para ver el video con sonido y controles */}
+      {/* Modal para ver el video */}
       {isOpen && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -112,7 +144,6 @@ const Home = () => {
         </div>
       )}
 
-      {/* Botón para ver más proyectos */}
       <div className="more-projects-container">
         <Link to="/Page">
           <button className="more-projects-button">Ver más Proyectos</button>

@@ -36,6 +36,8 @@
   color: #f4f4f4;
   font-size: 8.8rem;
   text-decoration: none;
+  animation: slideInFromTop 1s ease-out forwards;
+  /* animation: zoomIn 1s ease-out forwards; */
 }
 
 .logo-vp {
@@ -45,6 +47,31 @@
   color: #ffffff;
   margin: -4rem; /* Eliminar todos los márgenes */
   padding-top: 0.1rem;
+  /* animation: slideInFromBottom 1.5s ease-out forwards; */
+  animation: slideInFromLeft 1.5s ease-out forwards; /* Cambiado */
+}
+
+/* Keyframes para las animaciones */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Responsive design */

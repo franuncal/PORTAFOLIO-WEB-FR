@@ -29,6 +29,22 @@
   position: relative;
   padding-right: 15rem; /* Mantener el espacio a la derecha en pantallas grandes */
   transition: transform 0.3s ease; /* Animación para el ítem */
+  animation: bounceIn 1.2s ease-out forwards;
+}
+
+/* Agrega animación de deslizamiento desde la derecha */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(15%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .contact-item::before,
@@ -106,6 +122,7 @@
     position: relative; /* Mantener el flujo normal */
     transition: none; /* Quitar transición en móviles */
     padding-right: 0; /* Eliminar el espacio a la derecha */
+    animation: none; /* Sin animación en móviles */
   }
 
   .contact-detail {
@@ -164,6 +181,7 @@
   .contact-item {
     font-size: 3.6rem; /* Tamaño de fuente más pequeño */
     margin-top: 1.4rem; /* Espacio adicional entre ítems */
+    animation: none; /* Sin animación en móviles */
   }
 
   .contact-detail {
