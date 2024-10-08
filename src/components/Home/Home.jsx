@@ -68,9 +68,8 @@ const Home = () => {
     "https://www.youtube.com/embed/Ug2KoGHsRf8", // Sidra 1888
     "https://www.youtube.com/embed/Zt0uUcHv4qo", // Reci. Argentina
     "https://www.youtube.com/embed/OIGd7FdVU8I", // Sidra 1888 2
-    "https://www.youtube.com/embed/AjPANMagV_g", // Adidas
+    "https://www.youtube.com/embed/OPkzqNS2KqU", //Tandil Tennis
     "https://www.youtube.com/embed/8jCvH47oepw", // Emilia
-    // "https://www.youtube.com/embed/vDWve7oPfo0", // Tengo 1
     "https://www.youtube.com/embed/ZiK2uwovNZY", // Emilia vert.
     "https://www.youtube.com/embed/Hb8FbT47DtY", // Lali Mov. vert.
     "https://www.youtube.com/embed/J6LuXJm--u8", // Miranda vert.
