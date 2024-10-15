@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 // Componente para el video con Lazy Loading
-const Video = ({ videoUrl, isVertical, onClick }) => {
+const Video = React.memo(function Video({ videoUrl, isVertical, onClick }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Video = ({ videoUrl, isVertical, onClick }) => {
       <div className="overlay" onClick={onClick}></div>
     </div>
   );
-};
+});
 
 // Validación de las props
 Video.propTypes = {
@@ -61,14 +61,14 @@ const Home = () => {
 
   const videos = [
     "https://www.youtube.com/embed/3wbo-rEKGNw", // Gaby
-    "https://www.youtube.com/embed/Wsw8ZgiPyIY", //J Balvin
+    "https://www.youtube.com/embed/Wsw8ZgiPyIY", // J Balvin
     "https://www.youtube.com/embed/d6WgQ7TvKL4", // Lacoste
     "https://www.youtube.com/embed/re75ORPz2tk", // Nike
     "https://www.youtube.com/embed/r44fbL9Tg_k", // Messi
     "https://www.youtube.com/embed/Ug2KoGHsRf8", // Sidra 1888
     "https://www.youtube.com/embed/Zt0uUcHv4qo", // Reci. Argentina
     "https://www.youtube.com/embed/OIGd7FdVU8I", // Sidra 1888 2
-    "https://www.youtube.com/embed/OPkzqNS2KqU", //Tandil Tennis
+    "https://www.youtube.com/embed/OPkzqNS2KqU", // Tandil Tennis
     "https://www.youtube.com/embed/8jCvH47oepw", // Emilia
     "https://www.youtube.com/embed/ZiK2uwovNZY", // Emilia vert.
     "https://www.youtube.com/embed/Hb8FbT47DtY", // Lali Mov. vert.
@@ -94,7 +94,6 @@ const Home = () => {
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };

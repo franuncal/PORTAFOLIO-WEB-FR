@@ -4,7 +4,6 @@ import "./Contacto.css";
 export const Contacto = () => {
   return (
     <div className="contact-container">
-      {/* <h3 className="contact-title">Contacto</h3> */}
       <div className="contact-info">
         <div className="contact-item">
           <strong>EMAIL</strong>

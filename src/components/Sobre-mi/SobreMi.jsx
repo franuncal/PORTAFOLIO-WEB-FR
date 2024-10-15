@@ -1,5 +1,4 @@
-import imgPerfil from "../../assets/Img-fotos/perfilF1.png"; // Asegúrate de que la imagen esté en la ruta correcta
-
+import imgPerfil from "../../assets/Img-fotos/perfilF1.png";
 import "./SobreMi.css";
 
 export const SobreMi = () => {
