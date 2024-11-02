@@ -33,8 +33,7 @@
   margin: 0;
   font-weight: 500;
   font-family: "Teko", sans-serif;
-  color: #f4f4f4;
-  font-size: 8.8rem;
+  font-size: 10rem;
   text-decoration: none;
   animation: slideInFromTop 1s ease-out forwards;
   /* animation: zoomIn 1s ease-out forwards; */
@@ -42,9 +41,8 @@
 
 .logo-vp {
   margin: 0;
-  letter-spacing: 1.1rem; /* Reducir el espaciado entre letras */
+  letter-spacing: 1.4rem; /* Reducir el espaciado entre letras */
   font-size: 2.7rem;
-  color: #ffffff;
   margin: -4rem; /* Eliminar todos los márgenes */
   padding-top: 0.1rem;
   /* animation: slideInFromBottom 1.5s ease-out forwards; */
@@ -96,7 +94,7 @@
 /* Para pantallas pequeñas (smartphones) */
 @media (max-width: 768px) {
   .banner {
-    height: 75vh;
+    height: 50vh;
   }
 
   .banner-content {
@@ -111,7 +109,7 @@
 
   .logo-vp {
     font-size: 1.8rem; /* Reducir el tamaño del subtítulo */
-    letter-spacing: 0.5rem; /* Ajustar el espaciado */
+    letter-spacing: 0.4rem; /* Ajustar el espaciado */
     margin-top: 0.2rem; /* Ajustar margen para eliminar superposición */
   }
 }
@@ -119,15 +117,15 @@
 /* Para pantallas muy pequeñas (smartphones pequeños) */
 @media (max-width: 480px) {
   .banner {
-    height: 70vh;
+    height: 68vh;
   }
 
   .logo-v {
-    font-size: 4.3rem;
+    font-size: 4rem;
   }
 
   .logo-vp {
-    font-size: 2rem; /* Ajustar tamaño del subtítulo */
+    font-size: 1.8rem; /* Ajustar tamaño del subtítulo */
     letter-spacing: 0.3rem; /* Reducir el espaciado de letras */
     margin-top: 0.1rem; /* Eliminar cualquier superposición */
     margin: -2rem;

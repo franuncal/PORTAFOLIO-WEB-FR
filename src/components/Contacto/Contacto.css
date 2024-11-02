@@ -1,6 +1,6 @@
 .contact-container {
   background-color: black;
-  color: white;
+  color: #dad7d4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +54,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background-color: white;
+  background-color: #dad7d4;
   transform: scaleX(0); /* Líneas inicialmente escondidas */
   transition: transform 0.3s ease;
 }
@@ -84,7 +84,7 @@
   transform: translateY(20px);
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Animación de aparición */
   text-decoration: none;
-  color: white;
+  color: #dad7d4;
   z-index: 10;
 }
 

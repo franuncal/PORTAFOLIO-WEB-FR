@@ -99,7 +99,7 @@
   right: -40px;
   font-size: 35px;
   font-weight: bold;
-  color: #fff;
+  color: #dad7d4;
   cursor: pointer;
 }
 
@@ -109,7 +109,7 @@
 
 .more-projects-button {
   font-family: sans-serif;
-  background-color: white;
+  background-color: #dad7d4;
   color: black;
   border: 2px solid black;
   padding: 30px 30px;
@@ -122,7 +122,7 @@
 .more-projects-button:hover {
   transform: scale(1.1);
   background-color: black;
-  color: white;
+  color: #dad7d4;
 }
 
 /* Media queries para pantallas pequeñas */
