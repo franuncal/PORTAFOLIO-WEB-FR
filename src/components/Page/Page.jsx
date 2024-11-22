@@ -8,6 +8,26 @@ const Page = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/FIxdxlcfHKQ",
+      title: "ESTADIO MONUMENTAL COLO COLO - A.D.A TOUR 2024 - DUKI",
+      description: "FILMMAKING",
+    },
+    {
+      url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
+      title: "PUMA X SAN ISIDRO - 10K",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/RQKjMQbYS20",
+      title: "LE CLUB LACOSTE RACKET 2024 - SUMMA SPORT",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/4VdLAReBGCc",
+      title: "NIKE FOR THE ARTIST - NIKE MAX",
+      description: "RECAP",
+    },
+    {
       url: "https://www.youtube.com/embed/7_-FIF8zWVs",
       title: "YSY A - ESTADIO 'ADOLFO DUCO' HURACAN",
       description: "RECAP",
