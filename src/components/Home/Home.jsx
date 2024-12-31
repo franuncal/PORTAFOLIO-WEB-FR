@@ -64,10 +64,11 @@ const Home = () => {
   const videos = [
     "https://www.youtube.com/embed/FIxdxlcfHKQ",
     "https://www.youtube.com/embed/3wbo-rEKGNw",
+    "https://www.youtube.com/embed/GOW4kljLNXM",
     "https://www.youtube.com/embed/RQKjMQbYS20",
     "https://www.youtube.com/embed/Ulo2z6q8Sfc",
-    "https://www.youtube.com/embed/Wsw8ZgiPyIY",
     "https://www.youtube.com/embed/4VdLAReBGCc",
+    "https://www.youtube.com/embed/Wsw8ZgiPyIY",
     "https://www.youtube.com/embed/d6WgQ7TvKL4",
     "https://www.youtube.com/embed/re75ORPz2tk",
     "https://www.youtube.com/embed/r44fbL9Tg_k",
@@ -75,7 +76,7 @@ const Home = () => {
     "https://www.youtube.com/embed/Zt0uUcHv4qo",
     "https://www.youtube.com/embed/OIGd7FdVU8I",
     "https://www.youtube.com/embed/OPkzqNS2KqU",
-    "https://www.youtube.com/embed/8jCvH47oepw",
+    // "https://www.youtube.com/embed/8jCvH47oepw",
     // Verticales
     "https://www.youtube.com/embed/ZiK2uwovNZY",
     "https://www.youtube.com/embed/Hb8FbT47DtY",

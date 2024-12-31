@@ -8,9 +8,14 @@ const Page = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/GOW4kljLNXM",
+      title: "DEL POTRO - DJOKOVIC x LACOSTE M&G",
+      description: "RECAP",
+    },
+    {
       url: "https://www.youtube.com/embed/FIxdxlcfHKQ",
       title: "ESTADIO MONUMENTAL COLO COLO - A.D.A TOUR 2024 - DUKI",
-      description: "FILMMAKING",
+      description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
