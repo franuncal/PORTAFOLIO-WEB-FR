@@ -37,6 +37,10 @@ export const Footer = () => {
           ))}
         </div>
       </div>
+      <p>
+        © {new Date().getFullYear()} federementeria | Todos los derechos
+        reservados.
+      </p>
     </footer>
   );
 };
