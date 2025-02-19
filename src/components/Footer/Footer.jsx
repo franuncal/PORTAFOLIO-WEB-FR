@@ -9,12 +9,10 @@ export const Footer = () => {
   return (
     <footer className="footer" id="footer">
       <div className="footer-content">
-        <div className="footer-left">
-          <Link to="/" className="logo" onClick={handleScrollToTop}>
-            federementeria.
-          </Link>
-        </div>
-        <div className="footer-right">
+        <Link to="/" className="logo" onClick={handleScrollToTop}>
+          federementeria.
+        </Link>
+        <div className="footer-socials">
           {[
             {
               href: "https://www.instagram.com/federementeria27/",
@@ -37,7 +35,7 @@ export const Footer = () => {
           ))}
         </div>
       </div>
-      <p>
+      <p className="footer-copy">
         © {new Date().getFullYear()} federementeria | Todos los derechos
         reservados.
       </p>

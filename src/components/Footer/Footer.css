@@ -3,23 +3,26 @@
   color: #dad7d4;
   padding: 2rem;
   border-top: 1px solid #dad7d4;
+  text-align: center;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Definir un ancho máximo */
+  max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.footer-left {
-  font-size: 1.5rem;
+.logo {
+  font-size: 2.8rem;
   font-weight: 600;
-  text-align: left;
+  text-decoration: none;
+  color: #dad7d4;
 }
 
-.footer-right {
+.footer-socials {
   display: flex;
   gap: 1.5rem;
 }
@@ -28,32 +31,42 @@
   font-family: sans-serif;
   color: #777;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s; /* Añadir una transición suave al color */
+  font-size: 1.3rem;
+  transition: color 0.3s;
 }
 
 .social-link:hover {
   color: #888;
 }
 
-/* Media queries para hacer el footer responsive */
+.footer-copy {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* 📌 Estilos responsivos */
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    align-items: flex-start; /* Alinear a la izquierda */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
 
-  .footer-left {
-    font-size: 1.2rem; /* Reducir tamaño de fuente en pantallas pequeñas */
-    margin-bottom: 1rem; /* Espacio entre los elementos */
+  .logo {
+    font-size: 2.1rem;
   }
 
-  .footer-right {
-    justify-content: flex-start; /* Alinear elementos a la izquierda */
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan si es necesario */
+  .footer-socials {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .social-link {
-    font-size: 1rem; /* Reducir tamaño de fuente de los enlaces sociales */
+    font-size: 1.3rem;
+  }
+
+  .footer-copy {
+    margin-top: 1.5rem;
   }
 }
