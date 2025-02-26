@@ -62,21 +62,34 @@ const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState("");
 
   const videos = [
+    // Duki
     "https://www.youtube.com/embed/FIxdxlcfHKQ",
+    // Gaby
     "https://www.youtube.com/embed/3wbo-rEKGNw",
+    // Lacoste Del potro
     "https://www.youtube.com/embed/GOW4kljLNXM",
+    // Clinica lacoste
     "https://www.youtube.com/embed/RQKjMQbYS20",
+    // Sidra 1888 -Nuevo
+    "https://www.youtube.com/embed/CWopIoxPtY8",
+    // Puma
     "https://www.youtube.com/embed/Ulo2z6q8Sfc",
+    // Nike
     "https://www.youtube.com/embed/4VdLAReBGCc",
+    // Nike 2
     "https://www.youtube.com/embed/Wsw8ZgiPyIY",
+    // Lacoste clinica 2
     "https://www.youtube.com/embed/d6WgQ7TvKL4",
+    // Nike 3
     "https://www.youtube.com/embed/re75ORPz2tk",
+    // Messi
     "https://www.youtube.com/embed/r44fbL9Tg_k",
+    // Sidra 1888 1
     "https://www.youtube.com/embed/Ug2KoGHsRf8",
     "https://www.youtube.com/embed/Zt0uUcHv4qo",
-    "https://www.youtube.com/embed/OIGd7FdVU8I",
+    // "https://www.youtube.com/embed/OIGd7FdVU8I",
     "https://www.youtube.com/embed/OPkzqNS2KqU",
-    // "https://www.youtube.com/embed/8jCvH47oepw",
+
     // Verticales
     "https://www.youtube.com/embed/ZiK2uwovNZY",
     "https://www.youtube.com/embed/Hb8FbT47DtY",
