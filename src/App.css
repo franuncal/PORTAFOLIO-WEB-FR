@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gruppo&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+
 /* Reset básico */
 * {
   margin: 0;
@@ -10,28 +10,34 @@
 
 html {
   scroll-behavior: smooth;
-  /* scrollbar-width: none; */
+}
+
+/* Variables de colores para modo oscuro */
+:root {
+  --bg-color: #000; /* Negro */
+  --text-color: #dad7d4; /* Color del texto */
 }
 
 body {
-  /* background-color: rgba(0, 0, 0, 0.9); */
-  background-color: #000;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   height: 100vh;
   margin: 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
 h1,
 h2,
 h3 {
   font-family: "Teko", sans-serif;
-  font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
-  color: #dad7d4;
+  color: var(--text-color);
 }
 
 p {
   font-family: "Gruppo", sans-serif;
   font-weight: 300;
   font-style: normal;
+  color: var(--text-color);
 }

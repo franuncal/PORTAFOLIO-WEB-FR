@@ -62,12 +62,14 @@ const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState("");
 
   const videos = [
-    // Duki
-    "https://www.youtube.com/embed/FIxdxlcfHKQ",
+    // Duki Viña
+    "https://www.youtube.com/embed/wLSrCfRyAeI",
     // Gaby
     "https://www.youtube.com/embed/3wbo-rEKGNw",
     // Lacoste Del potro
     "https://www.youtube.com/embed/GOW4kljLNXM",
+    // Duki
+    "https://www.youtube.com/embed/FIxdxlcfHKQ",
     // Clinica lacoste
     "https://www.youtube.com/embed/RQKjMQbYS20",
     // Sidra 1888 -Nuevo

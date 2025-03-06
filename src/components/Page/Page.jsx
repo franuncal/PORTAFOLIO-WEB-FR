@@ -8,6 +8,11 @@ const Page = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/wLSrCfRyAeI",
+      title: "DUKI - VIÑA DEL MAR 2025",
+      description: "RECAP",
+    },
+    {
       url: "https://www.youtube.com/embed/CWopIoxPtY8",
       title: "ARG OPEN TENIS IEB+ - SIDRA 1888",
       description: "RECAP",
