@@ -51,6 +51,11 @@ export const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/Page" onClick={handleMenuClick}>
+              Proyectos
+            </Link>
+          </li>
+          <li>
             <Link to="/contact" onClick={handleMenuClick}>
               Contacto
             </Link>

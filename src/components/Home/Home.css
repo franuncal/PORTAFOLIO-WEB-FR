@@ -18,6 +18,17 @@
   width: 100%;
 }
 
+/* Grid de videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(650px, 1fr)
+  ); /* Mejor adaptación para pantallas pequeñas */
+  gap: 8px;
+  width: 100%;
+}
+
 /* Estilos de los videos en grid */
 .video-container {
   position: relative;
