@@ -1,11 +1,11 @@
 /* Banner */
 .banner {
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.2) 10%,
-    rgba(0, 0, 0, 0.6) 60%
+    rgba(255, 255, 255, 0.7) 20%,
+    /* rgba(0, 0, 0, 0.6) 80% */
   ); /* Destello fijo */
   background-size: cover;
   background-position: center;
