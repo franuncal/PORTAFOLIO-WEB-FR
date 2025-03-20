@@ -14,7 +14,7 @@ html {
 
 /* Variables de colores para modo oscuro */
 :root {
-  --bg-color: #000; /* Negro */
+  --bg-color: #000000;
   --text-color: #dad7d4; /* Color del texto */
 }
 
