@@ -18,6 +18,12 @@ const Page = () => {
       description: "RECAP",
     },
     {
+      url: "https://www.youtube.com/embed/10xx_kpNIes",
+      title: "DUKI - TOUR COCHABAMBA - SANTA CRUZ 2025",
+      description: "RECAP",
+    },
+
+    {
       url: "https://www.youtube.com/embed/GOW4kljLNXM",
       title: "DEL POTRO - DJOKOVIC x LACOSTE M&G",
       description: "RECAP",
