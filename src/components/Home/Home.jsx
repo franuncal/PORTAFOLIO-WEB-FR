@@ -71,7 +71,7 @@ const Home = () => {
     // Duki
     "https://www.youtube.com/embed/FIxdxlcfHKQ",
     // Duki Bolivia
-    "https://www.youtube.com/embed/10xx_kpNIes",
+    // "https://www.youtube.com/embed/10xx_kpNIes",
     // Clinica lacoste
     "https://www.youtube.com/embed/RQKjMQbYS20",
     // Sidra 1888 -Nuevo

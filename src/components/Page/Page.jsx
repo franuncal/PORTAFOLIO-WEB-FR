@@ -17,11 +17,11 @@ const Page = () => {
       title: "ARG OPEN TENIS IEB+ - SIDRA 1888",
       description: "RECAP",
     },
-    {
-      url: "https://www.youtube.com/embed/10xx_kpNIes",
-      title: "DUKI - TOUR COCHABAMBA - SANTA CRUZ 2025",
-      description: "RECAP",
-    },
+    // {
+    //   url: "https://www.youtube.com/embed/10xx_kpNIes",
+    //   title: "DUKI - TOUR COCHABAMBA - SANTA CRUZ 2025",
+    //   description: "RECAP",
+    // },
 
     {
       url: "https://www.youtube.com/embed/GOW4kljLNXM",
