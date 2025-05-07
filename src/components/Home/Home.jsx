@@ -62,18 +62,20 @@ const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState("");
 
   const videos = [
-    // Duki Viña
-    "https://www.youtube.com/embed/wLSrCfRyAeI",
-    // Gaby
+    // Duki USA
+    "https://www.youtube.com/embed/VuH8aXg0xTI",
+    // Gaby - Roland
     "https://www.youtube.com/embed/3wbo-rEKGNw",
     // Lacoste Del potro
     "https://www.youtube.com/embed/GOW4kljLNXM",
-    // Duki
-    "https://www.youtube.com/embed/FIxdxlcfHKQ",
-    // Duki Bolivia
-    // "https://www.youtube.com/embed/10xx_kpNIes",
+    // Duki LATAM
+    "https://www.youtube.com/embed/v5qvjvJxzRI",
     // Clinica lacoste
     "https://www.youtube.com/embed/RQKjMQbYS20",
+    // Duki
+    "https://www.youtube.com/embed/FIxdxlcfHKQ",
+    // Duki Viña
+    "https://www.youtube.com/embed/wLSrCfRyAeI",
     // Sidra 1888 -Nuevo
     "https://www.youtube.com/embed/CWopIoxPtY8",
     // Puma
@@ -90,16 +92,21 @@ const Home = () => {
     "https://www.youtube.com/embed/r44fbL9Tg_k",
     // Sidra 1888 1
     "https://www.youtube.com/embed/Ug2KoGHsRf8",
+    // ARG EZEIZA
     "https://www.youtube.com/embed/Zt0uUcHv4qo",
+    // COPA DAVIS - ROSARIO
     "https://www.youtube.com/embed/OIGd7FdVU8I",
+    // TANDIL ACDEMIA TENIS
     "https://www.youtube.com/embed/OPkzqNS2KqU",
-
     // Verticales
     "https://www.youtube.com/embed/ZiK2uwovNZY",
     "https://www.youtube.com/embed/Hb8FbT47DtY",
     "https://www.youtube.com/embed/J6LuXJm--u8",
     "https://www.youtube.com/embed/fM-3BnaqYOU",
   ];
+
+  // Duki Bolivia
+  // "https://www.youtube.com/embed/10xx_kpNIes",
 
   const openModal = (videoUrl) => {
     setSelectedVideo(videoUrl);

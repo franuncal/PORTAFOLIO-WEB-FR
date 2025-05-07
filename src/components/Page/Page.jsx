@@ -8,6 +8,16 @@ const Page = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/VuH8aXg0xTI",
+      title: "Duki - IREMA RUOT USA - Etapa I",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/v5qvjvJxzRI",
+      title: "Duki - IREMA RUOT 5202 - Etapa I",
+      description: "RECAP",
+    },
+    {
       url: "https://www.youtube.com/embed/wLSrCfRyAeI",
       title: "DUKI - VIÑA DEL MAR 2025",
       description: "RECAP",
@@ -17,12 +27,6 @@ const Page = () => {
       title: "ARG OPEN TENIS IEB+ - SIDRA 1888",
       description: "RECAP",
     },
-    // {
-    //   url: "https://www.youtube.com/embed/10xx_kpNIes",
-    //   title: "DUKI - TOUR COCHABAMBA - SANTA CRUZ 2025",
-    //   description: "RECAP",
-    // },
-
     {
       url: "https://www.youtube.com/embed/GOW4kljLNXM",
       title: "DEL POTRO - DJOKOVIC x LACOSTE M&G",
