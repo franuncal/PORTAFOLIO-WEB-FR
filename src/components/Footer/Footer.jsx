@@ -39,6 +39,16 @@ export const Footer = () => {
         © {new Date().getFullYear()} federementeria | Todos los derechos
         reservados.
       </p>
+      <p className="footer-dev">
+        Desarrollado por{" "}
+        <a
+          href="https://unquidev.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          unqui
+        </a>
+      </p>
     </footer>
   );
 };

@@ -1,4 +1,4 @@
-import imgPerfil from "../../assets/Img-fotos/perfilF1.png";
+import imgPerfil from "../../assets/Img-fotos/sobreMi.webp";
 import "./SobreMi.css";
 
 export const SobreMi = () => {
