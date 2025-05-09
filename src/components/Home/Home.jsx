@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 // Componente para el video con Lazy Loading
-const Video = React.memo(function Video({ videoUrl, isVertical, onClick }) {
+const Video = React.memo(function Video({ videoUrl, onClick }) {
   const videoRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -34,14 +34,14 @@ const Video = React.memo(function Video({ videoUrl, isVertical, onClick }) {
   }, [videoUrl, isLoaded]);
 
   return (
-    <div className={`video-container ${isVertical ? "vertical-video" : ""}`}>
+    <div className="video-container">
       <iframe
         ref={videoRef}
         frameBorder="0"
         allow="autoplay; encrypted-media"
         allowFullScreen
         title={`video-${videoUrl}`}
-        className={`video ${isVertical ? "vertical" : ""}`}
+        className="video"
         aria-label="Video de la galería"
       ></iframe>
       <div className="overlay" onClick={onClick}></div>
@@ -49,17 +49,23 @@ const Video = React.memo(function Video({ videoUrl, isVertical, onClick }) {
   );
 });
 
-// Validación de las props
 Video.propTypes = {
   videoUrl: PropTypes.string.isRequired,
-  isVertical: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
-// Componente principal Home
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const videos = [
     // Duki USA
@@ -98,15 +104,7 @@ const Home = () => {
     "https://www.youtube.com/embed/OIGd7FdVU8I",
     // TANDIL ACDEMIA TENIS
     "https://www.youtube.com/embed/OPkzqNS2KqU",
-    // Verticales
-    "https://www.youtube.com/embed/ZiK2uwovNZY",
-    "https://www.youtube.com/embed/Hb8FbT47DtY",
-    "https://www.youtube.com/embed/J6LuXJm--u8",
-    "https://www.youtube.com/embed/fM-3BnaqYOU",
   ];
-
-  // Duki Bolivia
-  // "https://www.youtube.com/embed/10xx_kpNIes",
 
   const openModal = (videoUrl) => {
     setSelectedVideo(videoUrl);
@@ -131,32 +129,20 @@ const Home = () => {
     };
   }, [handleKeyDown]);
 
+  const videosToShow = isMobile ? videos.slice(0, 8) : videos;
+
   return (
     <div className="home-container">
       <div className="video-grid">
-        {videos.slice(0, -4).map((videoUrl, index) => (
+        {videosToShow.map((videoUrl, index) => (
           <Video
             key={index}
             videoUrl={videoUrl}
-            isVertical={index >= 6}
             onClick={() => openModal(videoUrl)}
           />
         ))}
       </div>
 
-      {/* Contenedor de los 4 últimos videos */}
-      <div className="four-videos-container">
-        {videos.slice(-4).map((videoUrl, index) => (
-          <Video
-            key={index}
-            videoUrl={videoUrl}
-            isVertical={false}
-            onClick={() => openModal(videoUrl)}
-          />
-        ))}
-      </div>
-
-      {/* Modal para ver el video */}
       {isOpen && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -177,12 +163,13 @@ const Home = () => {
 
       <div className="more-projects-container">
         <Link to="/Page">
-          <button className="more-projects-button">Ver más Proyectos</button>
+          <button className="more-projects-button">
+            Ver más Proyectos <span className="arrow">→</span>
+          </button>
         </Link>
       </div>
     </div>
   );
 };
 
-// Exportando el componente envuelto en React.memo
 export default React.memo(Home);
