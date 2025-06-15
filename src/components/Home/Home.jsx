@@ -68,6 +68,8 @@ const Home = () => {
   }, []);
 
   const videos = [
+    //Alpine-Renault - gaby y colapinto
+    "https://www.youtube.com/embed/90h_Ru0Mfhk",
     // Duki USA
     "https://www.youtube.com/embed/VuH8aXg0xTI",
     // Gaby - Roland

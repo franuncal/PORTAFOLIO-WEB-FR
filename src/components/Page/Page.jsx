@@ -8,6 +8,11 @@ const Page = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
+      title: "RENAULT ARKANA - Gaby Sabatini x Franco Colapinto",
+      description: "RECAP",
+    },
+    {
       url: "https://www.youtube.com/embed/VuH8aXg0xTI",
       title: "Duki - IREMA RUOT USA - Etapa I",
       description: "RECAP",
