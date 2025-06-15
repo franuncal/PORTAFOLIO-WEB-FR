@@ -131,7 +131,7 @@ const Home = () => {
     };
   }, [handleKeyDown]);
 
-  const videosToShow = isMobile ? videos.slice(0, 8) : videos;
+  const videosToShow = isMobile ? videos.slice(0, 6) : videos;
 
   return (
     <div className="home-container">
