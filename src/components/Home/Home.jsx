@@ -105,7 +105,7 @@ const Home = () => {
     // COPA DAVIS - ROSARIO
     "https://www.youtube.com/embed/OIGd7FdVU8I",
     // TANDIL ACDEMIA TENIS
-    "https://www.youtube.com/embed/OPkzqNS2KqU",
+    // "https://www.youtube.com/embed/OPkzqNS2KqU",
   ];
 
   const openModal = (videoUrl) => {
