@@ -72,10 +72,12 @@ const Home = () => {
     "https://www.youtube.com/embed/90h_Ru0Mfhk",
     // Duki USA
     "https://www.youtube.com/embed/VuH8aXg0xTI",
-    // Gaby - Roland
-    "https://www.youtube.com/embed/3wbo-rEKGNw",
     // Lacoste Del potro
     "https://www.youtube.com/embed/GOW4kljLNXM",
+    // Nike 2
+    "https://www.youtube.com/embed/Wsw8ZgiPyIY",
+    // Gaby - Roland
+    "https://www.youtube.com/embed/3wbo-rEKGNw",
     // Duki LATAM
     "https://www.youtube.com/embed/v5qvjvJxzRI",
     // Clinica lacoste
@@ -90,8 +92,6 @@ const Home = () => {
     "https://www.youtube.com/embed/Ulo2z6q8Sfc",
     // Nike
     "https://www.youtube.com/embed/4VdLAReBGCc",
-    // Nike 2
-    "https://www.youtube.com/embed/Wsw8ZgiPyIY",
     // Lacoste clinica 2
     "https://www.youtube.com/embed/d6WgQ7TvKL4",
     // Nike 3
