@@ -25,14 +25,16 @@
 .footer-socials {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .social-link {
-  font-family: sans-serif;
   color: #777;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.8rem; /* tamaño del icono */
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
 }
 
 .social-link:hover {
@@ -69,12 +71,12 @@
   }
 
   .footer-socials {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .social-link {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   .footer-copy {

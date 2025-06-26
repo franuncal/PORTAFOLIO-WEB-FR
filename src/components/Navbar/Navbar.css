@@ -7,7 +7,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Semitransparente */
+  backdrop-filter: blur(8px); /* Blur leve */
+  -webkit-backdrop-filter: blur(8px); /* Compatibilidad Safari */
   top: 0;
   z-index: 1000;
 }
@@ -59,60 +61,56 @@ header {
   }
 
   .nav-list {
-    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-    visibility: hidden; /* Ocultar por defecto */
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro completo */
-    position: fixed; /* Posicionar el menú fijo */
+    flex-direction: column;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Ocupa toda la pantalla */
-    justify-content: center; /* Centrar los items verticalmente */
-    align-items: flex-end; /* Alinear items a la izquierda */
-    padding: 1.5rem; /* Espaciado interno */
-    z-index: 1000; /* Asegurar que esté por encima */
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1.5rem;
+    z-index: 1000;
     transition: transform 0.3s ease-in-out;
-    -webkit-transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%); /* Esconder inicialmente */
+    transform: translateX(-100%);
   }
 
   .nav.open .nav-list {
-    visibility: visible; /* Mostrar el menú cuando está abierto */
-    transform: translateX(0); /* Deslizar desde la izquierda */
+    visibility: visible;
+    transform: translateX(0);
   }
 
   .nav-list li {
-    margin: 1rem 0; /* Espaciado entre items */
+    margin: 1rem 0;
   }
 
   .nav-list li a {
-    font-size: 2.5rem; /* Aumentar el tamaño del texto */
+    font-size: 2.5rem;
     padding: 0.5rem 0;
   }
 
   .abrir-menu {
-    display: block; /* Mostrar siempre el botón de abrir/cerrar */
+    display: block;
     color: #dad7d4;
     font-size: 2rem;
     background: none;
     border: none;
-    position: fixed; /* Fijar en la esquina superior derecha */
+    position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 1100; /* Por encima del menú */
-  }
-
-  /* Cuando el menú está abierto */
-  .nav.open .abrir-menu {
-    content: "X"; /* Cambiar el contenido al cerrar */
+    z-index: 1100;
   }
 
   .cerrar-menu {
-    display: none; /* Ocultar por defecto */
+    display: none;
   }
 
   .cerrar-menu.visible {
-    display: block; /* Mostrar botón de cerrar cuando el menú está abierto */
+    display: block;
     position: absolute;
     top: 1rem;
     right: 1.5rem;
@@ -124,13 +122,13 @@ header {
 
   .social-icons-nav {
     display: flex;
-    margin-top: 2rem; /* Separar los íconos del menú principal */
+    margin-top: 2rem;
     justify-content: flex-end;
     width: 100%;
   }
 
   .social-icons-nav a {
-    font-size: 2rem; /* Aumentar el tamaño de los íconos */
+    font-size: 2rem;
     margin: 1rem;
   }
 }

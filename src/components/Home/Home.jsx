@@ -1,57 +1,83 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-// Componente para el video con Lazy Loading
-const Video = React.memo(function Video({ videoUrl, onClick }) {
-  const videoRef = useRef(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+const Video = React.memo(function Video({ videoUrl, title, description, onClick, isMobile }) {
+  const [hovered, setHovered] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const videoId = videoUrl.split("/").pop();
-          if (entry.isIntersecting) {
-            videoRef.current.src = `${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&showinfo=0&rel=0`;
-            setIsLoaded(true);
-          } else if (isLoaded) {
-            videoRef.current.src = "";
-            setIsLoaded(false);
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
+  const videoId = videoUrl.split("/").pop();
+  const autoplayUrl = `${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&showinfo=0&rel=0`;
 
-    const currentRef = videoRef.current;
-    if (currentRef) observer.observe(currentRef);
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, [videoUrl, isLoaded]);
+  const thumbnailUrl =
+    videoId === "VuH8aXg0xTI"
+      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+      : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   return (
-    <div className="video-container">
-      <iframe
-        ref={videoRef}
-        frameBorder="0"
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-        title={`video-${videoUrl}`}
-        className="video"
-        aria-label="Video de la galería"
-      ></iframe>
-      <div className="overlay" onClick={onClick}></div>
-    </div>
-  );
+  <div
+    className="video-container"
+    onMouseEnter={() => !isMobile && setHovered(true)}
+    onMouseLeave={() => !isMobile && setHovered(false)}
+    onClick={onClick}
+  >
+    {isMobile ? (
+      <>
+        <img
+          src={thumbnailUrl}
+          alt="Video thumbnail"
+          className="video-thumbnail"
+          onError={(e) => {
+            if (videoId !== "VuH8aXg0xTI") {
+              e.target.onerror = null;
+              e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+            }
+          }}
+        />
+        <div className="hover-info centered">
+          <h4>{title}</h4>
+          <p>{description}</p>
+        </div>
+      </>
+    ) : !hovered ? (
+      <img
+        src={thumbnailUrl}
+        alt="Video thumbnail"
+        className="video-thumbnail"
+        onError={(e) => {
+          if (videoId !== "VuH8aXg0xTI") {
+            e.target.onerror = null;
+            e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+          }
+        }}
+      />
+    ) : (
+      <>
+        <iframe
+          src={autoplayUrl}
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          title={`video-${videoId}`}
+          className="video"
+        ></iframe>
+        <div className="hover-info centered">
+          <h4>{title}</h4>
+          <p>{description}</p>
+        </div>
+      </>
+    )}
+    <div className="overlay"></div>
+  </div>
+);
 });
 
 Video.propTypes = {
   videoUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 const Home = () => {
@@ -67,45 +93,102 @@ const Home = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const videos = [
-    //Alpine-Renault - gaby y colapinto
-    "https://www.youtube.com/embed/90h_Ru0Mfhk",
-    // Duki USA
-    "https://www.youtube.com/embed/VuH8aXg0xTI",
-    // Lacoste Del potro
-    "https://www.youtube.com/embed/GOW4kljLNXM",
-    // Nike 2
-    "https://www.youtube.com/embed/Wsw8ZgiPyIY",
-    // Gaby - Roland
-    "https://www.youtube.com/embed/3wbo-rEKGNw",
-    // Duki LATAM
-    "https://www.youtube.com/embed/v5qvjvJxzRI",
-    // Clinica lacoste
-    "https://www.youtube.com/embed/RQKjMQbYS20",
-    // Duki
-    "https://www.youtube.com/embed/FIxdxlcfHKQ",
-    // Duki Viña
-    "https://www.youtube.com/embed/wLSrCfRyAeI",
-    // Sidra 1888 -Nuevo
-    "https://www.youtube.com/embed/CWopIoxPtY8",
-    // Puma
-    "https://www.youtube.com/embed/Ulo2z6q8Sfc",
-    // Nike
-    "https://www.youtube.com/embed/4VdLAReBGCc",
-    // Lacoste clinica 2
-    "https://www.youtube.com/embed/d6WgQ7TvKL4",
-    // Nike 3
-    "https://www.youtube.com/embed/re75ORPz2tk",
-    // Messi
-    "https://www.youtube.com/embed/r44fbL9Tg_k",
-    // Sidra 1888 1
-    "https://www.youtube.com/embed/Ug2KoGHsRf8",
-    // ARG EZEIZA
-    "https://www.youtube.com/embed/Zt0uUcHv4qo",
-    // COPA DAVIS - ROSARIO
-    "https://www.youtube.com/embed/OIGd7FdVU8I",
-    // TANDIL ACDEMIA TENIS
-    // "https://www.youtube.com/embed/OPkzqNS2KqU",
+   const videos = [
+    {
+      url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
+      title: "RENAULT ARKANA",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/VuH8aXg0xTI",
+      title: "DUKI IREMA ROUT",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/GOW4kljLNXM",
+      title: "LACOSTE",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/3wbo-rEKGNw",
+      title: "MI CIRCUITO PROFESIONAL - RG",
+      description: "DIRECTION CONTENT",
+    },
+    {
+      url: "https://www.youtube.com/embed/Wsw8ZgiPyIY",
+      title: "AIR JORDAN 3 RIO - J BALVIN",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/v5qvjvJxzRI",
+      title: "DUKI IREMA ROUT",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/FIxdxlcfHKQ",
+      title: "DUKI A.D.A TOUR 2024",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/RQKjMQbYS20",
+      title: "CLINICA LACOSTE",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/CWopIoxPtY8",
+      title: "SIDRA 1888",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/wLSrCfRyAeI",
+      title: "DUKI VIÑA DEL MAR 2025",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
+      title: "PUMA",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/d6WgQ7TvKL4",
+      title: "CLINICA LACOSTE",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/4VdLAReBGCc",
+      title: "NIKE",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/re75ORPz2tk",
+      title: "NIKE X TOM",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/r44fbL9Tg_k",
+      title: "MESSI EXPERIENCE",
+      description: "RECAP",
+    },
+    {
+      url: "https://www.youtube.com/embed/Ug2KoGHsRf8",
+      title: "SIDRA 1888",
+      description: "DIRECTION CONTENT",
+    },
+    {
+      url: "https://www.youtube.com/embed/OIGd7FdVU8I",
+      title: "COPA DAVIS - ROSARIO",
+      description: "DIRECTION CONTENT",
+    },
+    {
+      url: "https://www.youtube.com/embed/Zt0uUcHv4qo",
+      title: "SELECCION ARGENTINA",
+      description: "CAMERA OPERATION",
+    },
+    // {
+    //   url: "https://www.youtube.com/embed/OPkzqNS2KqU",
+    //   title: "TANDIL ACDEMIA TENIS",
+    //   description: "CAMERA OPERATION/EDIT",
+    // },
   ];
 
   const openModal = (videoUrl) => {
@@ -131,16 +214,19 @@ const Home = () => {
     };
   }, [handleKeyDown]);
 
-  const videosToShow = isMobile ? videos.slice(0, 6) : videos;
+  const videosToShow = isMobile ? videos.slice(0, 10) : videos;
 
   return (
     <div className="home-container">
       <div className="video-grid">
-        {videosToShow.map((videoUrl, index) => (
+        {videosToShow.map(({ url, title, description }, index) => (
           <Video
             key={index}
-            videoUrl={videoUrl}
-            onClick={() => openModal(videoUrl)}
+            videoUrl={url}
+            title={title}
+            description={description}
+            onClick={() => openModal(url)}
+            isMobile={isMobile}
           />
         ))}
       </div>

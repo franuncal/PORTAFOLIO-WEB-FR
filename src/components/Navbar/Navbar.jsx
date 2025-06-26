@@ -34,7 +34,7 @@ export const Navbar = () => {
       </button>
       <nav className={`nav ${menuOpen ? "open" : ""}`} id="nav">
         <ul className="nav-list" id="nav-list">
-          <li>
+          {/* <li>
             <Link
               to="/"
               onClick={() => {
@@ -44,7 +44,7 @@ export const Navbar = () => {
             >
               Inicio
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/SobreMi" onClick={handleMenuClick}>
               Sobre Mí
@@ -52,7 +52,7 @@ export const Navbar = () => {
           </li>
           <li>
             <Link to="/Page" onClick={handleMenuClick}>
-              Proyectos
+              + Proyectos
             </Link>
           </li>
           <li>
@@ -60,7 +60,7 @@ export const Navbar = () => {
               Contacto
             </Link>
           </li>
-          <div className="social-icons-nav">
+          {/* <div className="social-icons-nav">
             <a
               href="https://www.instagram.com/federementeria27/"
               target="_blank"
@@ -75,7 +75,7 @@ export const Navbar = () => {
             >
               <i className="bi bi-whatsapp"></i>
             </a>
-          </div>
+          </div> */}
         </ul>
       </nav>
     </header>
