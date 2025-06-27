@@ -17,8 +17,16 @@ const Video = React.memo(function Video({
 
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
-  const specialTitles = ["MI CIRCUITO PROFESIONAL RG", "LACOSTE CLUB BS.AS"];
+  const specialTitles = [
+    "MI CIRCUITO PROFESIONAL RG",
+    "LACOSTE CLUB BS.AS",
+    "NIKE FOR THE ARTIST",
+    "PUMA X SAN ISIDRO",
+  ];
   const isSpecialTitle = specialTitles.includes(title);
+
+  const specialDescriptions = ["DIRECTION CONTENT", "COLAPINTO-SABATINI"];
+  const isSpecialDescription = specialDescriptions.includes(description);
 
   return (
     <div
@@ -40,7 +48,9 @@ const Video = React.memo(function Video({
           />
           <div className="hover-info centered">
             <h4 className={isSpecialTitle ? "special-title" : ""}>{title}</h4>
-            <p>{description}</p>
+            <p className={isSpecialDescription ? "special-description" : ""}>
+              {description}
+            </p>
           </div>
         </>
       ) : !hovered ? (
@@ -150,7 +160,7 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
-      title: "PUMA",
+      title: "PUMA X SAN ISIDRO",
       description: "RECAP",
     },
     {
@@ -160,7 +170,7 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/4VdLAReBGCc",
-      title: "NIKE",
+      title: "NIKE FOR THE ARTIST",
       description: "RECAP",
     },
     {

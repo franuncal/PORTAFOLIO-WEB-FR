@@ -260,7 +260,7 @@
   }
 
   .hover-info.centered p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .more-projects-button {
@@ -272,5 +272,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 1rem; /* podés bajar más si no entra completo */
+  }
+  .special-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
