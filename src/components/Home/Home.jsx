@@ -9,10 +9,7 @@ const Video = React.memo(function Video({ videoUrl, title, description, onClick,
   const videoId = videoUrl.split("/").pop();
   const autoplayUrl = `${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&showinfo=0&rel=0`;
 
-  const thumbnailUrl =
-    videoId === "VuH8aXg0xTI"
-      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-      : `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+ const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   return (
   <div
@@ -23,17 +20,15 @@ const Video = React.memo(function Video({ videoUrl, title, description, onClick,
   >
     {isMobile ? (
       <>
-        <img
-          src={thumbnailUrl}
-          alt="Video thumbnail"
-          className="video-thumbnail"
-          onError={(e) => {
-            if (videoId !== "VuH8aXg0xTI") {
-              e.target.onerror = null;
-              e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-            }
-          }}
-        />
+      <img
+  src={thumbnailUrl}
+  alt="Video thumbnail"
+  className="video-thumbnail"
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  }}
+/>
         <div className="hover-info centered">
           <h4>{title}</h4>
           <p>{description}</p>
@@ -97,12 +92,12 @@ const Home = () => {
     {
       url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
       title: "RENAULT ARKANA",
-      description: "RECAP",
+      description: "COLAPINTO-SABATINI",
     },
     {
       url: "https://www.youtube.com/embed/VuH8aXg0xTI",
-      title: "DUKI IREMA ROUT",
-      description: "RECAP",
+      title: "USA TOUR",
+      description: "DUKI",
     },
     {
       url: "https://www.youtube.com/embed/GOW4kljLNXM",
@@ -121,17 +116,17 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/v5qvjvJxzRI",
-      title: "DUKI IREMA ROUT",
-      description: "RECAP",
+      title: "ARG TOUR",
+      description: "DUKI",
     },
-    {
-      url: "https://www.youtube.com/embed/FIxdxlcfHKQ",
-      title: "DUKI A.D.A TOUR 2024",
+      {
+      url: "https://www.youtube.com/embed/Z3wRrLgSkDA",
+      title: "SANTADER CLINICA",
       description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/RQKjMQbYS20",
-      title: "CLINICA LACOSTE",
+      title: "LACOSTE CLUB BS.AS",
       description: "RECAP",
     },
     {
@@ -141,8 +136,8 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/wLSrCfRyAeI",
-      title: "DUKI VIÑA DEL MAR 2025",
-      description: "RECAP",
+      title: "DUKI VIÑA DEL MAR",
+      description: "AFTERMOVIE",
     },
     {
       url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
@@ -174,7 +169,7 @@ const Home = () => {
       title: "SIDRA 1888",
       description: "DIRECTION CONTENT",
     },
-    {
+     {
       url: "https://www.youtube.com/embed/OIGd7FdVU8I",
       title: "COPA DAVIS - ROSARIO",
       description: "DIRECTION CONTENT",
@@ -184,11 +179,6 @@ const Home = () => {
       title: "SELECCION ARGENTINA",
       description: "CAMERA OPERATION",
     },
-    // {
-    //   url: "https://www.youtube.com/embed/OPkzqNS2KqU",
-    //   title: "TANDIL ACDEMIA TENIS",
-    //   description: "CAMERA OPERATION/EDIT",
-    // },
   ];
 
   const openModal = (videoUrl) => {
@@ -214,7 +204,7 @@ const Home = () => {
     };
   }, [handleKeyDown]);
 
-  const videosToShow = isMobile ? videos.slice(0, 10) : videos;
+  const videosToShow = isMobile ? videos.slice(0, 14) : videos;
 
   return (
     <div className="home-container">
