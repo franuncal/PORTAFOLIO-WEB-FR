@@ -3,68 +3,77 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-const Video = React.memo(function Video({ videoUrl, title, description, onClick, isMobile }) {
+const Video = React.memo(function Video({
+  videoUrl,
+  title,
+  description,
+  onClick,
+  isMobile,
+}) {
   const [hovered, setHovered] = useState(false);
 
   const videoId = videoUrl.split("/").pop();
   const autoplayUrl = `${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&showinfo=0&rel=0`;
 
- const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+  const specialTitles = ["MI CIRCUITO PROFESIONAL RG", "LACOSTE CLUB BS.AS"];
+  const isSpecialTitle = specialTitles.includes(title);
 
   return (
-  <div
-    className="video-container"
-    onMouseEnter={() => !isMobile && setHovered(true)}
-    onMouseLeave={() => !isMobile && setHovered(false)}
-    onClick={onClick}
-  >
-    {isMobile ? (
-      <>
-      <img
-  src={thumbnailUrl}
-  alt="Video thumbnail"
-  className="video-thumbnail"
-  onError={(e) => {
-    e.target.onerror = null;
-    e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-  }}
-/>
-        <div className="hover-info centered">
-          <h4>{title}</h4>
-          <p>{description}</p>
-        </div>
-      </>
-    ) : !hovered ? (
-      <img
-        src={thumbnailUrl}
-        alt="Video thumbnail"
-        className="video-thumbnail"
-        onError={(e) => {
-          if (videoId !== "VuH8aXg0xTI") {
-            e.target.onerror = null;
-            e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-          }
-        }}
-      />
-    ) : (
-      <>
-        <iframe
-          src={autoplayUrl}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          title={`video-${videoId}`}
-          className="video"
-        ></iframe>
-        <div className="hover-info centered">
-          <h4>{title}</h4>
-          <p>{description}</p>
-        </div>
-      </>
-    )}
-    <div className="overlay"></div>
-  </div>
-);
+    <div
+      className="video-container"
+      onMouseEnter={() => !isMobile && setHovered(true)}
+      onMouseLeave={() => !isMobile && setHovered(false)}
+      onClick={onClick}
+    >
+      {isMobile ? (
+        <>
+          <img
+            src={thumbnailUrl}
+            alt="Video thumbnail"
+            className="video-thumbnail"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+            }}
+          />
+          <div className="hover-info centered">
+            <h4 className={isSpecialTitle ? "special-title" : ""}>{title}</h4>
+            <p>{description}</p>
+          </div>
+        </>
+      ) : !hovered ? (
+        <img
+          src={thumbnailUrl}
+          alt="Video thumbnail"
+          className="video-thumbnail"
+          onError={(e) => {
+            if (videoId !== "VuH8aXg0xTI") {
+              e.target.onerror = null;
+              e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+            }
+          }}
+        />
+      ) : (
+        <>
+          <iframe
+            src={autoplayUrl}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title={`video-${videoId}`}
+            className="video"
+          ></iframe>
+          <div className="hover-info centered">
+            <h4>{title}</h4>
+            <p>{description}</p>
+          </div>
+        </>
+      )}
+      <div className="overlay"></div>
+    </div>
+  );
 });
 
 Video.propTypes = {
@@ -88,7 +97,7 @@ const Home = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-   const videos = [
+  const videos = [
     {
       url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
       title: "RENAULT ARKANA",
@@ -106,20 +115,20 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/3wbo-rEKGNw",
-      title: "MI CIRCUITO PROFESIONAL - RG",
+      title: "MI CIRCUITO PROFESIONAL RG",
       description: "DIRECTION CONTENT",
     },
     {
       url: "https://www.youtube.com/embed/Wsw8ZgiPyIY",
-      title: "AIR JORDAN 3 RIO - J BALVIN",
+      title: "AIR JORDAN 3 RIO",
       description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/v5qvjvJxzRI",
-      title: "ARG TOUR",
+      title: "ARGENTINA TOUR",
       description: "DUKI",
     },
-      {
+    {
       url: "https://www.youtube.com/embed/Z3wRrLgSkDA",
       title: "SANTADER CLINICA",
       description: "RECAP",
@@ -169,7 +178,7 @@ const Home = () => {
       title: "SIDRA 1888",
       description: "DIRECTION CONTENT",
     },
-     {
+    {
       url: "https://www.youtube.com/embed/OIGd7FdVU8I",
       title: "COPA DAVIS - ROSARIO",
       description: "DIRECTION CONTENT",

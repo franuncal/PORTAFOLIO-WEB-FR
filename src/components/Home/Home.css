@@ -256,15 +256,21 @@
   }
 
   .hover-info.centered h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .hover-info.centered p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .more-projects-button {
     padding: 12px 20px;
     font-size: 0.9rem;
+  }
+  .special-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem; /* podés bajar más si no entra completo */
   }
 }
