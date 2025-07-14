@@ -22,6 +22,7 @@ const Video = React.memo(function Video({
     "LACOSTE CLUB BS.AS",
     "NIKE FOR THE ARTIST",
     "PUMA X SAN ISIDRO",
+    "TOC PSYCHO x CRYPTONITA",
   ];
   const isSpecialTitle = specialTitles.includes(title);
 
@@ -108,6 +109,11 @@ const Home = () => {
   }, []);
 
   const videos = [
+    {
+      url: "https://www.youtube.com/embed/pZVakY0Uw84",
+      title: "TOC PSYCHO x CRYPTONITA",
+      description: "CAMERA OPERATION",
+    },
     {
       url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
       title: "RENAULT ARKANA",

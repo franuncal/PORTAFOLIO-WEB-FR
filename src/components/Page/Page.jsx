@@ -8,6 +8,11 @@ const Page = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/pZVakY0Uw84",
+      title: "TOC PSYCHO x CRYPTONITA",
+      description: "CAMERA OPERATION",
+    },
+    {
       url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
       title: "RENAULT ARKANA - Gaby Sabatini x Franco Colapinto",
       description: "RECAP",
