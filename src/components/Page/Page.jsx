@@ -7,10 +7,15 @@ const Page = () => {
   const [selectedVideo, setSelectedVideo] = useState("");
 
   const videos = [
+    // {
+    //   url: "https://www.youtube.com/embed/pZVakY0Uw84",
+    //   title: "TOC PSYCHO x CRYPTONITA",
+    //   description: "CAMERA OPERATION",
+    // },
     {
-      url: "https://www.youtube.com/embed/pZVakY0Uw84",
-      title: "TOC PSYCHO x CRYPTONITA",
-      description: "CAMERA OPERATION",
+      url: "https://www.youtube.com/embed/AE1WT17_3k4",
+      title: "DUKI - AFTERMOVIE ESPAÑA",
+      description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/90h_Ru0Mfhk",

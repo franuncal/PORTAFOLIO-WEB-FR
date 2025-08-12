@@ -37,7 +37,7 @@
 }
 
 .video-container .video-thumbnail {
-  filter: brightness(0.6);
+  filter: brightness(0.5);
   transition: filter 0.3s ease;
 }
 

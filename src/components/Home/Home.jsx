@@ -23,6 +23,7 @@ const Video = React.memo(function Video({
     "NIKE FOR THE ARTIST",
     "PUMA X SAN ISIDRO",
     "TOC PSYCHO x CRYPTONITA",
+    "DUKI - AFTERMOVIE ESPAÑA",
   ];
   const isSpecialTitle = specialTitles.includes(title);
 
@@ -109,20 +110,20 @@ const Home = () => {
   }, []);
 
   const videos = [
-    // {
-    //   url: "https://www.youtube.com/embed/pZVakY0Uw84",
-    //   title: "TOC PSYCHO x CRYPTONITA",
-    //   description: "CAMERA OPERATION",
-    // },
     {
-      url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
-      title: "RENAULT ARKANA",
-      description: "COLAPINTO-SABATINI",
+      url: "https://www.youtube.com/embed/AE1WT17_3k4",
+      title: "DUKI - AFTERMOVIE ESPAÑA",
+      description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/VuH8aXg0xTI",
       title: "USA TOUR",
       description: "DUKI",
+    },
+    {
+      url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
+      title: "RENAULT ARKANA",
+      description: "COLAPINTO-SABATINI",
     },
     {
       url: "https://www.youtube.com/embed/GOW4kljLNXM",
@@ -159,11 +160,11 @@ const Home = () => {
       title: "SIDRA 1888",
       description: "RECAP",
     },
-    {
-      url: "https://www.youtube.com/embed/wLSrCfRyAeI",
-      title: "DUKI VIÑA DEL MAR",
-      description: "AFTERMOVIE",
-    },
+    // {
+    //   url: "https://www.youtube.com/embed/wLSrCfRyAeI",
+    //   title: "DUKI VIÑA DEL MAR",
+    //   description: "AFTERMOVIE",
+    // },
     {
       url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
       title: "PUMA X SAN ISIDRO",
