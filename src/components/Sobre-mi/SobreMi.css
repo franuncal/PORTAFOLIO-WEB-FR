@@ -50,6 +50,28 @@
   height: 420px;
   object-fit: cover;
   border-radius: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-me-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.25); /* Overlay negro con opacidad */
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* Media queries para pantallas pequeñas (móviles) */
@@ -77,6 +99,13 @@
   .about-me-image img {
     width: 100%; /* Imagen más grande que ocupe toda la columna */
     height: 350px; /* Ajustar la altura automáticamente */
+    position: relative;
+    z-index: 1;
+  }
+  .about-me-image::after {
+    width: 100%;
+    height: 350px;
+    border-radius: 25px;
   }
 }
 
