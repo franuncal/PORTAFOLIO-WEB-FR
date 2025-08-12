@@ -54,7 +54,7 @@
 
 .footer-dev a {
   color: inherit;
-  text-decoration: underline dotted;
+  text-decoration: none;
 }
 
 /* 📌 Estilos responsivos */
