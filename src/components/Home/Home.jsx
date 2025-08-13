@@ -18,8 +18,19 @@ const Video = React.memo(function Video({
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   const specialTitles = [
-    "MI CIRCUITO PROFESIONAL RG",
+    "ESPAÑA TOUR - DUKI",
+    "USA TOUR - DUKI",
+    "RENAULT ARKANA",
+    "LACOSTE DJOKOVIC",
+    "RENAULT X GABY SABATINI",
+    "AIR JORDAN 3 RIO",
+    "ARGENTINA TOUR - DUKI",
+    "CLINICA SANTADER",
     "LACOSTE CLUB BS.AS",
+    "SIDRA 1888 X ARG OPEN",
+    "VIÑA DEL MAR DUKI",
+    "PUMA 10K SAN ISIDRO",
+    "CLINIC LACOSTE",
     "NIKE FOR THE ARTIST",
     "PUMA X SAN ISIDRO",
     "TOC PSYCHO x CRYPTONITA",
@@ -111,29 +122,29 @@ const Home = () => {
 
   const videos = [
     {
+      url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
+      title: "RENAULT ARKANA",
+      description: "DIRECCIÓN",
+    },
+    {
       url: "https://www.youtube.com/embed/AE1WT17_3k4",
-      title: "DUKI - AFTERMOVIE ESPAÑA",
-      description: "RECAP",
+      title: "ESPAÑA TOUR - DUKI",
+      description: "AFTERMOVIE",
     },
     {
       url: "https://www.youtube.com/embed/VuH8aXg0xTI",
-      title: "USA TOUR",
-      description: "DUKI",
-    },
-    {
-      url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
-      title: "RENAULT ARKANA",
-      description: "COLAPINTO-SABATINI",
+      title: "USA TOUR - DUKI",
+      description: "AFTERMOVIE",
     },
     {
       url: "https://www.youtube.com/embed/GOW4kljLNXM",
-      title: "LACOSTE",
+      title: "LACOSTE DJOKOVIC",
       description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/3wbo-rEKGNw",
-      title: "MI CIRCUITO PROFESIONAL RG",
-      description: "DIRECTION CONTENT",
+      title: "RENAULT X GABY SABATINI",
+      description: "DIRECCIÓN",
     },
     {
       url: "https://www.youtube.com/embed/Wsw8ZgiPyIY",
@@ -142,12 +153,12 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/v5qvjvJxzRI",
-      title: "ARGENTINA TOUR",
-      description: "DUKI",
+      title: "ARGENTINA TOUR - DUKI",
+      description: "AFTERMOVIE",
     },
     {
       url: "https://www.youtube.com/embed/Z3wRrLgSkDA",
-      title: "SANTADER CLINICA",
+      title: "CLINICA SANTADER",
       description: "RECAP",
     },
     {
@@ -157,28 +168,23 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/CWopIoxPtY8",
-      title: "SIDRA 1888",
-      description: "RECAP",
+      title: "SIDRA 1888 X ARG OPEN",
+      description: "AFTERMOVIE",
     },
-    // {
-    //   url: "https://www.youtube.com/embed/wLSrCfRyAeI",
-    //   title: "DUKI VIÑA DEL MAR",
-    //   description: "AFTERMOVIE",
-    // },
     {
       url: "https://www.youtube.com/embed/Ulo2z6q8Sfc",
-      title: "PUMA X SAN ISIDRO",
+      title: "PUMA 10K SAN ISIDRO",
       description: "RECAP",
     },
     {
       url: "https://www.youtube.com/embed/d6WgQ7TvKL4",
       title: "CLINICA LACOSTE",
-      description: "RECAP",
+      description: "AFTERMOVIE",
     },
     {
       url: "https://www.youtube.com/embed/4VdLAReBGCc",
       title: "NIKE FOR THE ARTIST",
-      description: "RECAP",
+      description: "DIRECCIÓN",
     },
     {
       url: "https://www.youtube.com/embed/re75ORPz2tk",
@@ -192,13 +198,13 @@ const Home = () => {
     },
     {
       url: "https://www.youtube.com/embed/Ug2KoGHsRf8",
-      title: "SIDRA 1888",
-      description: "DIRECTION CONTENT",
+      title: "SIDRA 1888 X ARG OPEN",
+      description: "AFTERMOVIE",
     },
     {
       url: "https://www.youtube.com/embed/OIGd7FdVU8I",
       title: "COPA DAVIS - ROSARIO",
-      description: "DIRECTION CONTENT",
+      description: "DIRECCIÓN",
     },
     {
       url: "https://www.youtube.com/embed/Zt0uUcHv4qo",
