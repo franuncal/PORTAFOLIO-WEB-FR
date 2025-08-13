@@ -1,3 +1,10 @@
+.logo-v span {
+  display: inline-block;
+  /* Sin borde ni rectángulo */
+  padding: 0.1em 0.2em;
+  margin: 0 0.08em;
+  background: rgba(0, 0, 0, 0.7);
+}
 /* Banner */
 .banner {
   width: 100%;
@@ -16,44 +23,6 @@
   align-items: center;
   overflow: hidden;
 }
-/* .banner {
-  width: 100%;
-  height: 85vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transition: background-image 0s linear;
-} */
-
-/* .banner-content {
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-} */
-/* 
-@keyframes destello {
-  0%,
-  100% {
-    background: rgba(0, 0, 0, 0.6);
-  }
-  50% {
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.2),
-      rgba(0, 0, 0, 0.6)
-    );
-  }
-} */
 
 .banner-content {
   width: 100%;
@@ -73,6 +42,7 @@
 }
 
 .logo-v {
+  position: relative;
   margin: 0;
   font-weight: 500;
   font-family: "Teko", sans-serif;
@@ -80,6 +50,8 @@
   text-decoration: none;
   animation: slideInFromTop 1s ease-out forwards;
   /* animation: zoomIn 1s ease-out forwards; */
+  /* Sin borde ni rectángulo */
+  text-shadow: 0 0 2px #fff, 0 2px 8px #000;
 }
 
 .logo-vp {
@@ -88,31 +60,6 @@
   font-size: 2.7rem;
   margin: -4rem; /* Eliminar todos los márgenes */
   padding-top: 0.1rem;
-  /* animation: slideInFromBottom 1.5s ease-out forwards; */
-  animation: slideInFromLeft 1.5s ease-out forwards; /* Cambiado */
-}
-
-/* Keyframes para las animaciones */
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* Responsive design */
