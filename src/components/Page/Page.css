@@ -4,7 +4,10 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin: 1rem auto;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
 }
 
 .home-container-p .title {
@@ -25,6 +28,7 @@
   grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   gap: 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Estilos de los videos en grid */
@@ -172,33 +176,52 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .home-container-p {
+    padding: 0 0.2rem;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .video-grid-p {
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
   .home-container-p .title {
-    font-size: 6rem; /* Título aún más pequeño */
+    font-size: 6rem;
   }
-
   .call-to-action h2 {
-    font-size: 3rem; /* Ajusta para pantallas más pequeñas */
+    font-size: 3rem;
   }
-
   .cta-button {
-    font-size: 2.5rem; /* Ajusta para pantallas más pequeñas */
+    font-size: 2.5rem;
   }
-
   .descripcion h3 {
-    font-size: 1.25rem; /* Ajusta para pantallas más pequeñas */
+    font-size: 1.25rem;
   }
-
   .descripcion p {
-    font-size: 0.9rem; /* Ajusta para pantallas más pequeñas */
+    font-size: 0.9rem;
   }
-
   .video-full {
-    height: 300px; /* Ajusta la altura del video en el modal para pantallas pequeñas */
+    height: 300px;
   }
 }
 
 /* Media queries para pantallas extra pequeñas (móviles muy pequeños) */
 @media (max-width: 480px) {
+  .home-container-p {
+    padding: 0 0.1rem;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .video-grid-p {
+    grid-template-columns: 1fr;
+    padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
   .home-container-p .title {
     font-size: 6rem;
     margin-top: 5rem;
