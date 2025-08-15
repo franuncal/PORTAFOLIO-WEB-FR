@@ -296,7 +296,7 @@ const Page = () => {
       <div className="call-to-action">
         <h2>TENÉS ALGÚN PROYECTO EN MENTE?</h2>
         <Link to="/contact" className="cta-button">
-          ~ Contactame...
+          Contactame...
         </Link>
       </div>
     </section>

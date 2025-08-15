@@ -178,15 +178,17 @@
 @media (max-width: 768px) {
   .home-container-p {
     padding: 0 0.2rem;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
   }
   .video-grid-p {
     grid-template-columns: 1fr;
     padding: 0;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   .home-container-p .title {
     font-size: 6rem;
@@ -212,15 +214,17 @@
 @media (max-width: 480px) {
   .home-container-p {
     padding: 0 0.1rem;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
   }
   .video-grid-p {
     grid-template-columns: 1fr;
     padding: 0;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   .home-container-p .title {
     font-size: 6rem;
@@ -228,4 +232,8 @@
     padding-bottom: 3rem;
     left: 1rem;
   }
+}
+
+body {
+  overflow-x: hidden;
 }
