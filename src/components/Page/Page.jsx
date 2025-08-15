@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
 import "./Page.css";
 
@@ -221,9 +222,36 @@ const Page = () => {
     window.scrollTo(0, 0); // Desplazar hacia arriba cuando se monta el componente
   }, []);
 
+  // Animación GSAP de escritura letra por letra para el título principal
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const title = titleRef.current;
+    if (!title) return;
+    const text = "PROYECTOS";
+    title.innerHTML = text
+      .split("")
+      .map(
+        (char) =>
+          `<span style='opacity:0; display:inline-block;'>${
+            char === " " ? "&nbsp;" : char
+          }</span>`
+      )
+      .join("");
+    const letters = title.querySelectorAll("span");
+    gsap.set(letters, { y: 20 });
+    gsap.to(letters, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.7,
+      ease: "slow(0.7,0.7,false)",
+    });
+  }, []);
+
   return (
     <section className="home-container-p">
-      <h1 className="title">PROYECTOS</h1>
+      <h1 className="title" ref={titleRef}></h1>
       <div className="video-grid-p">
         {videos.map((video, index) => (
           <div key={index} className="video-container-p">
