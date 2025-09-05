@@ -3,6 +3,19 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
+// Helper para obtener el videoId desde la url
+function getVideoId(url) {
+  const match = url.match(/embed\/([\w-]+)/);
+  return match ? match[1] : "";
+}
+
+// Helper para construir la url de embed con todos los parámetros
+function getEmbedUrl(videoId, mute = true) {
+  return `https://www.youtube-nocookie.com/embed/${videoId}?mute=${
+    mute ? 1 : 0
+  }&autoplay=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`;
+}
+
 const Video = React.memo(function Video({
   videoUrl,
   title,
@@ -12,9 +25,8 @@ const Video = React.memo(function Video({
 }) {
   const [hovered, setHovered] = useState(false);
 
-  const videoId = videoUrl.split("/").pop();
-  const autoplayUrl = `${videoUrl}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&showinfo=0&rel=0`;
-
+  const videoId = getVideoId(videoUrl);
+  const autoplayUrl = getEmbedUrl(videoId, true);
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   const specialTitles = [
@@ -83,11 +95,19 @@ const Video = React.memo(function Video({
           <iframe
             src={autoplayUrl}
             frameBorder="0"
-            allow="autoplay; encrypted-media"
+            allow="autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title={`video-${videoId}`}
             className="video"
           ></iframe>
+          {/* <iframe
+            src={autoplayUrl}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title={`video-${videoId}`}
+            className="video"
+          ></iframe> */}
           <div className="hover-info centered">
             <h4>{title}</h4>
             <p>{description}</p>
@@ -260,9 +280,9 @@ const Home = () => {
               &times;
             </span>
             <iframe
-              src={`${selectedVideo}?autoplay=1&mute=0&controls=1`}
+              src={getEmbedUrl(getVideoId(selectedVideo), false)}
               frameBorder="0"
-              allow="autoplay; encrypted-media"
+              allow="autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               title="selected-video"
               className="video-full"

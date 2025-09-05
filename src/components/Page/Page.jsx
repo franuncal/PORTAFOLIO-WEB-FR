@@ -3,6 +3,19 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 import "./Page.css";
 
+// Helper para obtener el videoId desde la url
+function getVideoId(url) {
+  const match = url.match(/embed\/([\w-]+)/);
+  return match ? match[1] : "";
+}
+
+// Helper para construir la url de embed con todos los parámetros
+function getEmbedUrl(videoId, mute = true) {
+  return `https://www.youtube-nocookie.com/embed/${videoId}?mute=${
+    mute ? 1 : 0
+  }&autoplay=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0`;
+}
+
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState("");
@@ -281,9 +294,9 @@ const Page = () => {
               &times;
             </span>
             <iframe
-              src={`${selectedVideo}?autoplay=1&mute=0&controls=1`} // Video con sonido y controles
+              src={getEmbedUrl(getVideoId(selectedVideo), false)}
               frameBorder="0"
-              allow="autoplay; encrypted-media"
+              allow="autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               title="selected-video"
               className="video-full"
