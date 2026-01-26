@@ -23,7 +23,12 @@ body {
   color: var(--text-color);
   height: 100vh;
   margin: 0 auto;
+  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+html {
+  overflow-x: hidden;
 }
 
 h1,

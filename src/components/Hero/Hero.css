@@ -1,0 +1,191 @@
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  isolation: isolate;
+}
+
+.hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  clip-path: inset(35% 60% 35% 20%);
+  transition: clip-path 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.hero-video-background.expanded {
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  border: none;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "Teko", sans-serif;
+  font-size: 12rem;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #fff;
+  margin: 0;
+  padding: 0 2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 2;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.1);
+}
+
+.scroll-circle {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.scroll-svg text {
+  fill: #fff;
+  font-size: 6px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #e62e00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.scroll-arrow span {
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    color: #fff;
+    padding: 0 1rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .scroll-indicator {
+    bottom: 2rem;
+    right: 1.5rem;
+    display: block !important;
+  }
+
+  .scroll-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .scroll-arrow {
+    font-size: 1.2rem;
+    color: #e62e00;
+  }
+
+  .scroll-svg text {
+    font-size: 6px !important;
+    fill: #fff !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .scroll-svg circle {
+    stroke: #fff !important;
+  }
+}

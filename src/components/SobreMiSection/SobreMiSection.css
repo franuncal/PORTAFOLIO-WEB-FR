@@ -1,0 +1,150 @@
+.aboutMono {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  overflow-x: clip;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 2rem);
+  margin: clamp(3rem, 7vw, 7rem) 0 clamp(3rem, 6vw, 5rem) 0;
+  position: relative;
+}
+
+.aboutMono__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutMono__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* Headline gigante */
+.aboutMono__headline {
+  margin: 0;
+  font-family: "Teko", sans-serif;
+  font-weight: 400;
+  line-height: 0.92;
+  text-transform: none;
+  font-size: clamp(4.2rem, 8vw, 10rem);
+  color: #dad7d4;
+}
+
+/* Columna derecha */
+.aboutMono__side {
+  padding-top: clamp(0.5rem, 1vw, 1rem);
+  max-width: 46ch;
+}
+
+.aboutMono__copy {
+  margin: 0 0 clamp(1rem, 1.5vw, 1.5rem) 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(218, 215, 212, 0.85);
+}
+
+.aboutMono__copy--muted {
+  color: rgba(218, 215, 212, 0.65);
+}
+
+/* Meta line (mínima) */
+.aboutMono__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  margin-top: clamp(1.5rem, 2vw, 2rem);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.92rem;
+  color: rgba(218, 215, 212, 0.68);
+}
+
+.aboutMono__metaItem {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+
+.aboutMono__metaSep {
+  opacity: 0.4;
+}
+
+.aboutMono__metaLink {
+  text-decoration: none;
+  color: rgba(218, 215, 212, 0.86);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(218, 215, 212, 0.22);
+  padding-bottom: 2px;
+  transition: border-color 200ms ease;
+}
+
+.aboutMono__metaLink:hover {
+  border-bottom-color: rgba(218, 215, 212, 0.55);
+}
+
+/* Hint (como en tu referencia: chiquito a la derecha) */
+.aboutMono__hint {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.25rem);
+  top: clamp(1.4rem, 2.2vw, 2rem);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .aboutMono__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .aboutMono__headline {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .aboutMono__side {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .aboutMono__hint {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutMono {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2vw, 1.5rem);
+    margin: clamp(2rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem) 0;
+  }
+
+  .aboutMono__headline {
+    font-size: clamp(3.5rem, 10vw, 4.5rem);
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutMono__copy {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .aboutMono__meta {
+    margin-top: 1.5rem;
+  }
+}
