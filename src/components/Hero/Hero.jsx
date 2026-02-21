@@ -1,34 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import "./Hero.css";
 
-// Helper para obtener el videoId desde la url
-function getVideoId(url) {
-  const patterns = [
-    /embed\/([\w-]+)/,
-    /youtube\.com\/watch\?v=([\w-]+)/,
-    /youtu\.be\/([\w-]+)/,
-  ];
-
-  for (const pattern of patterns) {
-    const match = url.match(pattern);
-    if (match) return match[1];
-  }
-  return "";
-}
-
-// Helper para construir la url de embed con loop
-function getEmbedUrl(videoId, mute = true) {
-  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${
-    mute ? 1 : 0
-  }&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&playsinline=1`;
-}
-
-const Hero = ({ videoUrl }) => {
+const Hero = ({ videoSrc = "/hero-720.mp4" }) => {
   const [videoExpanded, setVideoExpanded] = useState(false);
   const videoContainerRef = useRef(null);
-
-  const videoId = videoUrl ? getVideoId(videoUrl) : "";
-  const backgroundVideoUrl = videoId ? getEmbedUrl(videoId, true) : "";
 
   // Efecto para expandir el video después de 2 segundos
   useEffect(() => {
@@ -51,16 +27,15 @@ const Hero = ({ videoUrl }) => {
         className={`hero-video-background ${videoExpanded ? "expanded" : ""}`}
         ref={videoContainerRef}
       >
-        {backgroundVideoUrl && (
-          <iframe
-            src={backgroundVideoUrl}
-            frameBorder="0"
-            allow="autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="background-video"
-            className="hero-background-video"
-          ></iframe>
-        )}
+        <video
+          className="hero-background-video"
+          src={videoSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Video de fondo del hero"
+        />
         <div className="hero-overlay"></div>
       </div>
 
@@ -111,6 +86,10 @@ const Hero = ({ videoUrl }) => {
       </div>
     </section>
   );
+};
+
+Hero.propTypes = {
+  videoSrc: PropTypes.string,
 };
 
 export default Hero;

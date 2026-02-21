@@ -1,6 +1,8 @@
 /* Navbar.css */
 /* =========================
    USSHER-LIKE NAV (simple, pro)
+   Desktop: strip centered links
+   Mobile: single bar + full-width dropdown panel
    ========================= */
 
 .usherNav {
@@ -12,7 +14,10 @@
   pointer-events: none;
 }
 
-/* Desktop strip (full width, centered links) */
+/* =========================
+   DESKTOP
+   ========================= */
+
 .usherNav__desktop {
   pointer-events: auto;
   width: 100%;
@@ -81,7 +86,7 @@
   opacity: 1;
 }
 
-/* Active: underline ONLY while active/hover (no “línea pegada” permanente) */
+/* Active underline: only on hover/active */
 .usherNav__link::after {
   content: "";
   position: absolute;
@@ -102,7 +107,7 @@
 }
 
 /* =========================
-   MOBILE (only pills + small panel)
+   MOBILE (single bar + full panel)
    ========================= */
 
 .usherNav__mobile {
@@ -113,25 +118,26 @@
   display: none;
 }
 
-/* Pills top */
+/* Fixed container with margins */
 .usherNav__mobileTop {
   pointer-events: auto;
   position: fixed;
   top: 14px;
   left: 14px;
   right: 14px;
-  /* 👈 clave */
   z-index: 2001;
+}
 
+/* The single bar (full width) */
+.usherNav__mobileBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* 👈 FR izquierda / flecha derecha */
-}
 
-.usherNav__brand,
-.usherNav__toggle {
-  border-radius: 999px;
+  height: 54px;
+  padding: 0 14px;
+
+  border-radius: 14px;
 
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -142,7 +148,7 @@
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
 }
 
-/* Brand */
+/* Brand inside bar (no pill) */
 .usherNav__brand {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
@@ -155,21 +161,29 @@
   font-size: 1.45rem;
   line-height: 1;
 
-  padding: 0.55rem 0.85rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-/* Toggle */
+/* Toggle inside bar (no pill) */
 .usherNav__toggle {
   width: 46px;
   height: 46px;
 
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  cursor: pointer;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
 
+  cursor: pointer;
   display: grid;
   place-items: center;
 }
 
+/* Focus styles */
 .usherNav__toggle:focus-visible,
 .usherNav__brand:focus-visible,
 .usherNav__panelLink:focus-visible,
@@ -178,31 +192,32 @@
   outline-offset: 3px;
 }
 
-/* Chevron (up/down) */
+/* Chevron (default: down "v") */
 .usherNav__chev {
   width: 14px;
   height: 14px;
   border-right: 2px solid rgba(255, 255, 255, 0.85);
   border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-  transform: rotate(-135deg);
-  /* ^ (up) */
+  transform: rotate(45deg);
+  /* v */
   transition: transform 180ms ease;
 }
 
+/* Open: up "^" */
 .usherNav__toggle.open .usherNav__chev {
-  transform: rotate(45deg);
-  /* v (down) */
+  transform: rotate(-135deg);
 }
 
-/* Panel (ONLY links, no extras) */
+/* Panel full-width under bar */
 .usherNav__panel {
   pointer-events: auto;
   position: fixed;
-  top: 74px;
+  top: 76px;
   left: 14px;
-  width: 250px;
+  right: 14px;
+  width: auto;
 
-  padding: 14px 14px;
+  padding: 18px 18px;
   border-radius: 14px;
 
   background: rgba(0, 0, 0, 0.45);
@@ -221,7 +236,7 @@
   z-index: 2001;
 }
 
-/* Little caret */
+/* Little caret pointing to the bar */
 .usherNav__panel::before {
   content: "";
   position: absolute;
@@ -282,7 +297,7 @@
   opacity: 1;
 }
 
-/* Active underline (same rule, never “pegado” permanente) */
+/* Active underline (same rule, never permanent line) */
 .usherNav__panelLink::after {
   content: "";
   position: absolute;
@@ -301,15 +316,18 @@
   transform: scaleX(1);
 }
 
-/* Overlay for click outside */
+/* Overlay for click outside (soft fog like AU) */
 .usherNav__overlay.open {
   display: block;
   pointer-events: auto;
   position: fixed;
   inset: 0;
   border: 0;
-  background: transparent;
-  /* no “fondo raro” */
+
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   z-index: 2000;
 }
 

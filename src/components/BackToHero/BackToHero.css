@@ -1,0 +1,75 @@
+/* Back to Hero - mismo diseño que el círculo del Hero (proyectos) */
+.back-to-hero {
+  background: #000;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3rem;
+}
+
+.back-to-hero__circle {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-to-hero__circle:hover {
+  transform: scale(1.1);
+}
+
+.back-to-hero__circle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+}
+
+.back-to-hero__svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.back-to-hero__svg text {
+  fill: #fff;
+  font-size: 6px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+}
+
+.back-to-hero__arrow {
+  position: relative;
+  color: #e62e00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .back-to-hero {
+    padding-right: 1.5rem;
+  }
+
+  .back-to-hero__circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .back-to-hero__arrow {
+    font-size: 1.2rem;
+  }
+}

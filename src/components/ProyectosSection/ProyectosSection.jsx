@@ -174,7 +174,6 @@ const VideoCard = React.memo(function VideoCard({
           aria-hidden="true"
         />
 
-        {/* Meta centrada y JUNTA (como tu captura) */}
         <div
           className="projectCard__meta"
           aria-hidden={!shouldShowMeta}
@@ -217,10 +216,25 @@ const ProyectosSection = () => {
   const videos = useMemo(
     () => [
       {
-        url: "https://www.youtube.com/embed/p2QlsA3SOrs",
-        title: "DUKI - TOUR ESPAÑA OCTUBRE 2025",
+        url: "https://youtu.be/TsRBpXc20bs",
+        title: "VILLAVICENCIO - IEB + ARG OPEN",
+        description: "DIRECCIÓN",
+      },
+      {
+        url: "https://youtu.be/UOHSOm47a5A",
+        title: "SIDRA 1888 X TORNEO ARGENTINO DE POLO",
+        description: "DIRECCIÓN",
+      },
+      {
+        url: "https://youtu.be/VgcNdQ-hZe4",
+        title: "DUKI - MEXICO I SEPTIEMBRE 2025",
         description: "RECAP",
       },
+      // {
+      //   url: "https://www.youtube.com/embed/p2QlsA3SOrs",
+      //   title: "DUKI - TOUR ESPAÑA OCTUBRE 2025",
+      //   description: "RECAP",
+      // },
       {
         url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
         title: "RENAULT ARKANA",
@@ -232,14 +246,14 @@ const ProyectosSection = () => {
         description: "AFTERMOVIE",
       },
       {
-        url: "https://www.youtube.com/embed/VuH8aXg0xTI",
-        title: "USA TOUR - DUKI",
-        description: "AFTERMOVIE",
-      },
-      {
         url: "https://www.youtube.com/embed/GOW4kljLNXM",
         title: "LACOSTE DJOKOVIC",
         description: "RECAP",
+      },
+      {
+        url: "https://www.youtube.com/embed/VuH8aXg0xTI",
+        title: "USA TOUR - DUKI",
+        description: "AFTERMOVIE",
       },
       {
         url: "https://www.youtube.com/embed/3wbo-rEKGNw",
@@ -343,7 +357,7 @@ const ProyectosSection = () => {
     };
   }, [isOpen]);
 
-  const videosToShow = isMobile ? videos.slice(0, 13) : videos;
+  const videosToShow = isMobile ? videos.slice(0, 15) : videos;
 
   return (
     <>

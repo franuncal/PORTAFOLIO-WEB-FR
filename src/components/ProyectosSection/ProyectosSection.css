@@ -20,7 +20,7 @@
   padding: 0 clamp(1rem, 3vw, 2rem);
   overflow: hidden;
   white-space: nowrap;
-  font-size: clamp(4.2rem, 8vw, 10rem);
+  font-size: clamp(3.2rem, 8vw, 10rem);
 }
 
 .projectsSection__marquee {
@@ -49,7 +49,7 @@
 /* GRID full width (2 columnas desktop, 1 mobile) */
 .projectsSection__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   width: 100%;
 }
@@ -260,11 +260,9 @@
 
   .projectCard__overlay {
     opacity: 0.45 !important;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(0, 0, 0, 0.15),
-      rgba(0, 0, 0, 0.4)
-    ) !important;
+    background: radial-gradient(circle at 50% 50%,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.4)) !important;
   }
 }
 

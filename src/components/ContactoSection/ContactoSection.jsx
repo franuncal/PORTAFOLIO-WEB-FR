@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { FaInstagram, FaEnvelope, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import "./ContactoSection.css";
 
@@ -46,7 +46,7 @@ const ContactoSection = () => {
             <FaWhatsapp className="contact-icon" />
           </a>
           <a
-            href="https://www.youtube.com/@federementeria"
+            href="https://www.youtube.com/@federementeria27"
             className="contact-icon-link"
             target="_blank"
             rel="noopener noreferrer"

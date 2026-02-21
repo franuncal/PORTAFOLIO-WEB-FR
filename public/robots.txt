@@ -1,0 +1,26 @@
+# robots.txt para Federementeria
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://federementeria.com/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important assets
+Allow: /assets/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Crawl-delay (optional, be careful with this)
+# Crawl-delay: 1

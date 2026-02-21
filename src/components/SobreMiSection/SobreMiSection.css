@@ -3,45 +3,56 @@
   color: #fff;
   width: 100%;
   overflow-x: clip;
-  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 2rem);
-  margin: clamp(3rem, 7vw, 7rem) 0 clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
+  margin: clamp(2rem, 7vw, 5rem) 0 clamp(2rem, 6vw, 4rem) 0;
   position: relative;
 }
 
 .aboutMono__container {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .aboutMono__grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(4rem, 6vw, 6rem);
+  align-items: center;
 }
 
-/* Headline gigante */
+/* Imagen izquierda - blanco y negro */
+.aboutMono__imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.aboutMono__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border-radius: 10px;
+}
+
+/* Mini título derecha */
 .aboutMono__headline {
-  margin: 0;
+  margin: 0 0 clamp(1rem, 1.5vw, 1.5rem) 0;
   font-family: "Teko", sans-serif;
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 1;
   text-transform: none;
-  font-size: clamp(4.2rem, 8vw, 10rem);
+  font-size: clamp(4rem, 6vw, 6rem);
   color: #dad7d4;
-}
-
-/* Columna derecha */
-.aboutMono__side {
-  padding-top: clamp(0.5rem, 1vw, 1rem);
-  max-width: 46ch;
 }
 
 .aboutMono__copy {
   margin: 0 0 clamp(1rem, 1.5vw, 1.5rem) 0;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   line-height: 1.8;
   color: rgba(218, 215, 212, 0.85);
 }
@@ -112,17 +123,18 @@
     gap: clamp(2rem, 4vw, 3rem);
   }
 
-  .aboutMono__headline {
-    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  .aboutMono__imageWrap {
+    max-height: 60vh;
+    order: 1;
   }
 
   .aboutMono__side {
+    order: 2;
     max-width: 100%;
-    padding-top: 0;
   }
 
-  .aboutMono__hint {
-    display: none;
+  .aboutMono__headline {
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
   }
 }
 
@@ -132,14 +144,18 @@
     margin: clamp(2rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem) 0;
   }
 
+  .aboutMono__imageWrap {
+    aspect-ratio: 3 / 4;
+    max-height: 45vh;
+  }
+
   .aboutMono__headline {
-    font-size: clamp(3.5rem, 10vw, 4.5rem);
-    line-height: 0.95;
-    margin-bottom: 1.5rem;
+    font-size: clamp(3rem, 8vw, 4rem);
+    margin-bottom: 1rem;
   }
 
   .aboutMono__copy {
-    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
     line-height: 1.75;
     margin-bottom: 1rem;
   }
