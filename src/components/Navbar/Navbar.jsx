@@ -59,7 +59,6 @@ export const Navbar = () => {
 
     scrollToId(targetId);
 
-    // set hash sin salto
     if (window.history?.replaceState) {
       window.history.replaceState(null, "", hash);
     }
@@ -107,21 +106,32 @@ export const Navbar = () => {
     <header className={`usherNav ${isScrolled ? "is-scrolled" : ""}`}>
       {/* DESKTOP */}
       <div className="usherNav__desktop">
-        <nav className="usherNav__center" aria-label="Navegación principal">
-          <ul className="usherNav__list">
-            {navItems.map((item) => (
-              <li key={item.targetId} className="usherNav__item">
-                <button
-                  type="button"
-                  className={`usherNav__link ${isActive(item.hash) ? "is-active" : ""}`}
-                  onClick={() => handleNav(item.hash, item.targetId)}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="usherNav__inner">
+          <Link
+            to="/"
+            className="usherNav__brand"
+            onClick={goHomeTop}
+            aria-label="Ir al inicio"
+          >
+            FR.
+          </Link>
+
+          <nav className="usherNav__center" aria-label="Navegación principal">
+            <ul className="usherNav__list">
+              {navItems.map((item) => (
+                <li key={item.targetId} className="usherNav__item">
+                  <button
+                    type="button"
+                    className={`usherNav__link ${isActive(item.hash) ? "is-active" : ""}`}
+                    onClick={() => handleNav(item.hash, item.targetId)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
 
       {/* MOBILE */}
@@ -145,7 +155,11 @@ export const Navbar = () => {
               aria-expanded={menuOpen}
               aria-controls="usher-nav-panel"
             >
-              <span aria-hidden="true" className="usherNav__chev" />
+              <span aria-hidden="true" className="usherNav__burger">
+                <span />
+                <span />
+                <span />
+              </span>
             </button>
           </div>
         </div>

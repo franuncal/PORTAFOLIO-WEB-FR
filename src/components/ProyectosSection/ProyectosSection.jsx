@@ -213,16 +213,38 @@ const ProyectosSection = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  //
   const videos = useMemo(
     () => [
+      {
+        url: "https://youtu.be/VHr8KL9Be2Y",
+        title: "Fito Páez | Casa Páez - Rosario",
+        description: "DIRECCIÓN",
+      },
+      {
+        url: "https://youtu.be/lDdUCXWMdUw",
+        title: "DUKI 5202 | FIN DE TOUR",
+        description: "AFTERMOVIE",
+      },
+      {
+        url: "https://youtu.be/EvplpVhiRZI",
+        title: "EL PLAN DE LA MARIPOSA - MERCEDES BS AS",
+        description: "DIRECCIÓN",
+      },
+      {
+        url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
+        title: "RENAULT ARKANA",
+        description: "DIRECCIÓN",
+      },
       {
         url: "https://youtu.be/TsRBpXc20bs",
         title: "VILLAVICENCIO - IEB + ARG OPEN",
         description: "DIRECCIÓN",
       },
+      //
       {
-        url: "https://youtu.be/UOHSOm47a5A",
-        title: "SIDRA 1888 X TORNEO ARGENTINO DE POLO",
+        url: "https://youtu.be/6zfsKo55q44",
+        title: "IEB + Arg Open | Sidra 1888",
         description: "DIRECCIÓN",
       },
       {
@@ -230,16 +252,12 @@ const ProyectosSection = () => {
         title: "DUKI - MEXICO I SEPTIEMBRE 2025",
         description: "RECAP",
       },
+
       // {
       //   url: "https://www.youtube.com/embed/p2QlsA3SOrs",
       //   title: "DUKI - TOUR ESPAÑA OCTUBRE 2025",
       //   description: "RECAP",
       // },
-      {
-        url: "https://www.youtube.com/embed/90h_Ru0Mfhk",
-        title: "RENAULT ARKANA",
-        description: "DIRECCIÓN",
-      },
       {
         url: "https://www.youtube.com/embed/AE1WT17_3k4",
         title: "ESPAÑA TOUR - DUKI",
@@ -250,15 +268,21 @@ const ProyectosSection = () => {
         title: "LACOSTE DJOKOVIC",
         description: "RECAP",
       },
-      {
-        url: "https://www.youtube.com/embed/VuH8aXg0xTI",
-        title: "USA TOUR - DUKI",
-        description: "AFTERMOVIE",
-      },
+
       {
         url: "https://www.youtube.com/embed/3wbo-rEKGNw",
         title: "RENAULT X GABY SABATINI",
         description: "DIRECCIÓN",
+      },
+      {
+        url: "https://youtu.be/UOHSOm47a5A",
+        title: "SIDRA 1888 X TORNEO ARGENTINO DE POLO",
+        description: "DIRECCIÓN",
+      },
+      {
+        url: "https://www.youtube.com/embed/VuH8aXg0xTI",
+        title: "USA TOUR - DUKI",
+        description: "AFTERMOVIE",
       },
       {
         url: "https://www.youtube.com/embed/Wsw8ZgiPyIY",

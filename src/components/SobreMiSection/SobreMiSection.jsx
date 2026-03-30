@@ -7,15 +7,11 @@ const SobreMiSection = () => {
       <div className="aboutMono__container">
         <div className="aboutMono__grid">
           <div className="aboutMono__imageWrap">
-            <img
-              src={sobreMiImage}
-              alt=""
-              className="aboutMono__image"
-            />
+            <img src={sobreMiImage} alt="" className="aboutMono__image" />
           </div>
 
           <div className="aboutMono__side">
-            <h2 className="aboutMono__headline">Realizador Audiovisual</h2>
+            <h2 className="aboutMono__headline">Realizador Audiovisual.</h2>
 
             <p className="aboutMono__copy">
               Dirección y edición audiovisual.

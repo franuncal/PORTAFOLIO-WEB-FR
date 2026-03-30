@@ -5,8 +5,45 @@ import "./Hero.css";
 const Hero = ({ videoSrc = "/hero-720.mp4" }) => {
   const [videoExpanded, setVideoExpanded] = useState(false);
   const videoContainerRef = useRef(null);
+  const videoRef = useRef(null);
 
-  // Efecto para expandir el video después de 2 segundos
+  // Intenta reproducir el video explícitamente (necesario en mobile)
+  const attemptPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.play().catch(() => {
+      // Si falla, espera interacción del usuario
+    });
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Forzar reproducción en cuanto el video tenga datos suficientes
+    const handleCanPlay = () => attemptPlay();
+    video.addEventListener("canplay", handleCanPlay);
+
+    // Fallback: cualquier toque del usuario dispara la reproducción
+    const handleUserInteraction = () => {
+      attemptPlay();
+      document.removeEventListener("touchstart", handleUserInteraction);
+      document.removeEventListener("click", handleUserInteraction);
+    };
+    document.addEventListener("touchstart", handleUserInteraction, { passive: true });
+    document.addEventListener("click", handleUserInteraction);
+
+    // Intentar ya si el video ya cargó
+    attemptPlay();
+
+    return () => {
+      video.removeEventListener("canplay", handleCanPlay);
+      document.removeEventListener("touchstart", handleUserInteraction);
+      document.removeEventListener("click", handleUserInteraction);
+    };
+  }, []);
+
+  // Expande el video después de 2 segundos
   useEffect(() => {
     const timer = setTimeout(() => {
       setVideoExpanded(true);
@@ -28,12 +65,14 @@ const Hero = ({ videoSrc = "/hero-720.mp4" }) => {
         ref={videoContainerRef}
       >
         <video
+          ref={videoRef}
           className="hero-background-video"
           src={videoSrc}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           aria-label="Video de fondo del hero"
         />
         <div className="hero-overlay"></div>

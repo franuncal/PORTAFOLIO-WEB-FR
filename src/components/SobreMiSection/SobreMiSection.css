@@ -4,18 +4,18 @@
   width: 100%;
   overflow-x: clip;
   padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
-  margin: clamp(2rem, 7vw, 5rem) 0 clamp(2rem, 6vw, 4rem) 0;
+  margin: clamp(2rem, 7vw, 5rem) 0 clamp(2rem, 6vw, 2rem) 0;
   position: relative;
 }
 
 .aboutMono__container {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .aboutMono__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: clamp(4rem, 6vw, 6rem);
   align-items: center;
 }
@@ -52,7 +52,7 @@
   margin: 0 0 clamp(1rem, 1.5vw, 1.5rem) 0;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
   line-height: 1.8;
   color: rgba(218, 215, 212, 0.85);
 }
@@ -155,7 +155,7 @@
   }
 
   .aboutMono__copy {
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-size: clamp(1rem, 4vw, 1.2rem);
     line-height: 1.75;
     margin-bottom: 1rem;
   }
