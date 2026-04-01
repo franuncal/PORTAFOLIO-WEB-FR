@@ -221,10 +221,21 @@ const ProyectosSection = () => {
         title: "Fito Páez | Casa Páez - Rosario",
         description: "DIRECCIÓN",
       },
+
+      {
+        url: "https://www.youtube.com/embed/3wbo-rEKGNw",
+        title: "RENAULT X GABY SABATINI",
+        description: "DIRECCIÓN",
+      },
       {
         url: "https://youtu.be/lDdUCXWMdUw",
         title: "DUKI 5202 | FIN DE TOUR",
         description: "AFTERMOVIE",
+      },
+      {
+        url: "https://youtu.be/6zfsKo55q44",
+        title: "IEB + Arg Open | Sidra 1888",
+        description: "DIRECCIÓN",
       },
       {
         url: "https://youtu.be/EvplpVhiRZI",
@@ -242,22 +253,12 @@ const ProyectosSection = () => {
         description: "DIRECCIÓN",
       },
       //
-      {
-        url: "https://youtu.be/6zfsKo55q44",
-        title: "IEB + Arg Open | Sidra 1888",
-        description: "DIRECCIÓN",
-      },
+
       {
         url: "https://youtu.be/VgcNdQ-hZe4",
         title: "DUKI - MEXICO I SEPTIEMBRE 2025",
         description: "RECAP",
       },
-
-      // {
-      //   url: "https://www.youtube.com/embed/p2QlsA3SOrs",
-      //   title: "DUKI - TOUR ESPAÑA OCTUBRE 2025",
-      //   description: "RECAP",
-      // },
       {
         url: "https://www.youtube.com/embed/AE1WT17_3k4",
         title: "ESPAÑA TOUR - DUKI",
@@ -269,11 +270,6 @@ const ProyectosSection = () => {
         description: "RECAP",
       },
 
-      {
-        url: "https://www.youtube.com/embed/3wbo-rEKGNw",
-        title: "RENAULT X GABY SABATINI",
-        description: "DIRECCIÓN",
-      },
       {
         url: "https://youtu.be/UOHSOm47a5A",
         title: "SIDRA 1888 X TORNEO ARGENTINO DE POLO",
